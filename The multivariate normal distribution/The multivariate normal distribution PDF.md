@@ -103,16 +103,26 @@ Compute the Determinant of the Covariance Matrix
 
 Compute the Inverse of the Covariance Matrix
 
-\$$
-\boldsymbol{\Sigma}^{-1} = \frac{1}{\left| \boldsymbol{\Sigma} \right|} Adj(\boldsymbol{\Sigma} \)=
-\begin{bmatrix}
+$$
+\boldsymbol{\Sigma}^{-1} = \frac{1}{\left| \boldsymbol{\Sigma} \right|} Adj(\boldsymbol{\Sigma} \)
+$$
+
+
+$$
+\=\begin{bmatrix}
 \sigma_1^2 & 0 \\
 0 & \sigma_2^2
 \end{bmatrix}^{-1}
+$$
+
+$$
 = \frac{1}{\sigma_1^2 \sigma_2^2} \begin{bmatrix}
 \frac{1}{\sigma_1^2} & 0 \\
 0 & \frac{1}{\sigma_2^2}
 \end{bmatrix}
+$$
+
+$$
 =\begin{bmatrix}
 \frac{1}{\sigma_2^2} & 0 \\
 0 & \frac{1}{\sigma_1^2}

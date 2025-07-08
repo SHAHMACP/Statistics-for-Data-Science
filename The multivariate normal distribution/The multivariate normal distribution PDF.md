@@ -95,24 +95,21 @@ Compute the Determinant of the Covariance Matrix
 \left| 
 \begin{array}{cc}
 \sigma_1^2 & 0 \\
-0 & \sigma_2^2}
+0 & \sigma_2^2
 \end{array}
 \right| 
 = \sigma_1^2 \sigma_2^2
 \$$
 
-
+Compute the Inverse of the Covariance Matrix
 
 \$$
-\left| \boldsymbol{\Sigma}^{-1} \right| =
-\left| 
+\boldsymbol{\Sigma}^{-1} = \frac{1}{\left| \boldsymbol{\Sigma} \right|} Adj(\boldsymbol{\Sigma} \)=
 \begin{bmatrix}
-\frac{1}{\sigma_1^2} & 0 \\
-0 & \frac{1}{\sigma_2^2}
-\end{bmatrix}
-\right|
-= \frac{1}{\sigma_1^2} \cdot \frac{1}{\sigma_2^2}
-= \frac{1}{\sigma_1^2 \sigma_2^2}
+\sigma_1^2 & 0 \\
+0 & \sigma_2^2
+\end{bmatrix}^{-1}
+= \frac{1}{\sigma_1^2 \sigma_2^2} 
 \$$
 
 \$$

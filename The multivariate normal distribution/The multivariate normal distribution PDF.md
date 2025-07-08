@@ -109,45 +109,36 @@ Compute the Inverse of the Covariance Matrix
 \sigma_1^2 & 0 \\
 0 & \sigma_2^2
 \end{bmatrix}^{-1}
-= \frac{1}{\sigma_1^2 \sigma_2^2} 
-\$$
-
-\$$
-\|boldsymbol{\Sigma}^{-1}| =
-\begin{bmatrix}
+= \frac{1}{\sigma_1^2 \sigma_2^2} \begin{bmatrix}
 \frac{1}{\sigma_1^2} & 0 \\
 0 & \frac{1}{\sigma_2^2}
 \end{bmatrix}
-\$$
-
-The inverse of the covariance matrix is:
-
-\$$
-\boldsymbol{\Sigma}^{-1} =
-\begin{bmatrix}
-\frac{1}{\sigma_1^2} & 0 \\
-0 & \frac{1}{\sigma_2^2}
+=\begin{bmatrix}
+\frac{1}{\sigma_2^2} & 0 \\
+0 & \frac{1}{\sigma_1^2}
 \end{bmatrix}
 \$$
+
 
 Now compute the quadratic form:
 
-\[
+\$$
 (\mathbf{X} - \boldsymbol{\mu})^T \boldsymbol{\Sigma}^{-1} (\mathbf{X} - \boldsymbol{\mu})
 = \begin{bmatrix}
 x_1 - \mu_1 & x_2 - \mu_2
 \end{bmatrix}
 \begin{bmatrix}
-\frac{1}{\sigma_1^2} & 0 \\
-0 & \frac{1}{\sigma_2^2}
+\frac{1}{\sigma_2^2} & 0 \\
+0 & \frac{1}{\sigma_1^2}
 \end{bmatrix}
 \begin{bmatrix}
 x_1 - \mu_1 \\
 x_2 - \mu_2
 \end{bmatrix}
-\]
+\$$
 
 
+$$
 \begin{bmatrix}
 \sigma_1^2 & 0 \\
 0 & \sigma_2^2

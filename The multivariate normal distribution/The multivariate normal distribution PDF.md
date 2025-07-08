@@ -88,15 +88,50 @@ cov(x_2,x_1) & var(x_2)
 \end{bmatrix}
 $$
 
+Compute the Determinant of the Covariance Matrix 
+
+\$$
+\left| \boldsymbol{\Sigma} \right| =
+\left| 
+\begin{array}{cc}
+\sigma_1^2 & 0 \\
+0 & \sigma_2^2}
+\end{array}
+\right| 
+= \sigma_1^2 \sigma_2^2
+\$$
+
+
+
+\$$
+\left| \boldsymbol{\Sigma}^{-1} \right| =
+\left| 
+\begin{bmatrix}
+\frac{1}{\sigma_1^2} & 0 \\
+0 & \frac{1}{\sigma_2^2}
+\end{bmatrix}
+\right|
+= \frac{1}{\sigma_1^2} \cdot \frac{1}{\sigma_2^2}
+= \frac{1}{\sigma_1^2 \sigma_2^2}
+\$$
+
+\$$
+\|boldsymbol{\Sigma}^{-1}| =
+\begin{bmatrix}
+\frac{1}{\sigma_1^2} & 0 \\
+0 & \frac{1}{\sigma_2^2}
+\end{bmatrix}
+\$$
+
 The inverse of the covariance matrix is:
 
-\[
+\$$
 \boldsymbol{\Sigma}^{-1} =
 \begin{bmatrix}
 \frac{1}{\sigma_1^2} & 0 \\
 0 & \frac{1}{\sigma_2^2}
 \end{bmatrix}
-\]
+\$$
 
 Now compute the quadratic form:
 

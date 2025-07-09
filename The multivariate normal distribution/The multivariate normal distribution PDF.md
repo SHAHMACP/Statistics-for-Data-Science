@@ -74,7 +74,7 @@ cov(x_2,x_1) & var(x_2)
 \rho \sigma_1 \sigma_2 & \sigma_2^2
 \end{bmatrix}$$
 
-### Case 1: Without correlation $(\rho=0)$
+### Case 1: Without correlation $(\rho=0)$  - Variables are not independent
 Then, the covariance matrix becomes diagonal:
 
 $$
@@ -166,7 +166,9 @@ $$f(x_1, x_2) = \frac{1}{2\pi \sigma_1 \sigma_2} \cdot \exp\left( -\frac{1}{2} \
 = \frac{1}{(2\pi)^{(2/2)} \cdot \left| \boldsymbol{\Sigma} \right|^{1/2}} \cdot \exp\left( -\frac{1}{2} (\mathbf{X} - \boldsymbol{\mu})^T \boldsymbol{\Sigma}^{-1} (\mathbf{X} - \boldsymbol{\mu}) \right)
 $$
 
-## 3. Generalization to Multivariate Case
+### Case 2: With correlation $(\rho)$ - Variables are not independent
+
+## 3. Generalization to the Multivariate Case
 
 Let $\mathbf{X} \in \mathbb{R}^n$ be a random vector following a multivariate normal distribution with mean vector $\boldsymbol{\mu}$ and covariance matrix $\boldsymbol{\Sigma}$.
 
@@ -203,7 +205,7 @@ Then the exponential part of the PDF is:
 \exp\left( -\frac{1}{2} (\mathbf{X} - \boldsymbol{\mu})^T \boldsymbol{\Sigma}^{-1} (\mathbf{X} - \boldsymbol{\mu}) \right)
 \$$
 
-## 4. Final PDF of the Multivariate Normal Distribution
+## Final PDF of the Multivariate Normal Distribution
 
 \$$
 f(\mathbf{X}) = \frac{1}{(2\pi)^{n/2} |\boldsymbol{\Sigma}|^{1/2}} \cdot \exp\left( -\frac{1}{2} (\mathbf{X} - \boldsymbol{\mu})^T \boldsymbol{\Sigma}^{-1} (\mathbf{X} - \boldsymbol{\mu}) \right)

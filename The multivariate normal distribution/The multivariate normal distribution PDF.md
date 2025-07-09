@@ -64,7 +64,12 @@ x_1 - \mu_1 \\
 x_2 - \mu_2
 \end{bmatrix}
 \$$
-For a dataset with two (or more) features, the covariance matrix captures how each variable varies with every other.
+
+For a dataset with two (or more) features, the covariance matrix captures how each variable varies with every other. 
+
+
+(The correlation of variables $x_1$ and $x_2$ is defined by $\rho(x_1,x_2)=\frac{cov(x_1,x_2)}{\sigma_1 \cdot \sigma_2}$. Then the covariance becomes $cov(x_1,x_2)=\rho \sigma_1 \sigma_2$)
+
 $$\boldsymbol{\Sigma} = \begin{bmatrix}
 var(x_1) & cov(x_1,x_2) \\
 cov(x_2,x_1) & var(x_2)
@@ -167,6 +172,85 @@ $$f(x_1, x_2) = \frac{1}{2\pi \sigma_1 \sigma_2} \cdot \exp\left( -\frac{1}{2} \
 $$
 
 ### Case 2: With correlation $(\rho)$ - Variables are not independent
+
+$$\boldsymbol{\Sigma} = 
+\begin{bmatrix}
+\sigma_1^2 & \rho \sigma_1 \sigma_2 \\
+\rho \sigma_1 \sigma_2 & \sigma_2^2
+\end{bmatrix}$$
+
+Compute the Determinant of the Covariance Matrix 
+
+\$$
+\begin{aligned}
+\left| \boldsymbol{\Sigma} \right| &=
+\left| 
+\begin{array}{cc}
+\sigma_1^2 & \rho \sigma_1 \sigma_2 \\
+\rho \sigma_1 \sigma_2 & \sigma_2^2
+\end{array}
+\right| \\
+&= \sigma_1^2 \sigma_2^2 - \rho^2 \sigma_1^2 \sigma_2^2 \\
+&=  \sigma_1^2 \sigma_2^2 (1-\rho^2)
+\end{aligned}
+\$$
+
+Compute the Inverse of the Covariance Matrix
+
+$$
+\begin{aligned}
+\boldsymbol{\Sigma}^{-1} &= \frac{1}{\left| \boldsymbol{\Sigma} \right|} Adj(\boldsymbol{\Sigma} \)
+\\
+&=\begin{bmatrix}
+\sigma_1^2 & \rho \sigma_1 \sigma_2 \\
+\rho \sigma_1 \sigma_2 & \sigma_2^2
+\end{bmatrix}^{-1}
+\\
+&= \frac{1}{\sigma_1^2 \sigma_2^2 (1-\rho^2)} 
+\begin{bmatrix}
+\frac{1}{\sigma_1^2} & -\rho \sigma_1 \sigma_2 \\
+-\rho \sigma_1 \sigma_2 & \frac{1}{\sigma_2^2}
+\end{bmatrix}
+\\
+&= \frac{1}{(1-\rho^2)}
+\begin{bmatrix}
+\frac{1}{\sigma_2^2} & \frac{-\rho}{ \sigma_1 \sigma_2} \\
+\frac{-\rho}{ \sigma_1 \sigma_2} & \frac{1}{\sigma_1^2}
+\end{bmatrix}\\
+\end{aligned}
+$$
+
+Now compute the quadratic form:
+
+\$$
+\begin{aligned}
+(\mathbf{X} - \boldsymbol{\mu})^T \boldsymbol{\Sigma}^{-1} (\mathbf{X} - \boldsymbol{\mu})
+&= \begin{bmatrix}
+x_1 - \mu_1 & x_2 - \mu_2
+\end{bmatrix}
+\begin{bmatrix}
+\frac{1}{\sigma_2^2} & 0 \\
+0 & \frac{1}{\sigma_1^2}
+\end{bmatrix}
+\begin{bmatrix}
+x_1 - \mu_1 \\
+x_2 - \mu_2
+\end{bmatrix}
+\\
+&= \begin{bmatrix}
+x_1 - \mu_1 & x_2 - \mu_2
+\end{bmatrix}
+\begin{bmatrix}
+\frac{x_1 - \mu_1}{\sigma_2^2} \\
+\frac{x_2 - \mu_2}{\sigma_1^2}
+\end{bmatrix}
+\\
+&=\begin{bmatrix}
+\frac{(x_1 - \mu_1)^2}{\sigma_2^2}+\frac{(x_2 - \mu_2)^2}{\sigma_1^2}
+\end{bmatrix}\\
+\end{aligned}
+$$
+
 
 ## 3. Generalization to the Multivariate Case
 

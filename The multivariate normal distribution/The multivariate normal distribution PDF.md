@@ -74,7 +74,7 @@ cov(x_2,x_1) & var(x_2)
 \rho \sigma_1 \sigma_2 & \sigma_2^2
 \end{bmatrix}$$
 
-### Case 1: Without correlation $(\rho=0)$  - Variables are not independent
+### Case 1: Without correlation $(\rho=0)$  - Variables are independent
 Then, the covariance matrix becomes diagonal:
 
 $$

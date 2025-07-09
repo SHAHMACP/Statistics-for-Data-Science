@@ -21,7 +21,7 @@ f(x) &= \frac{1}{\sqrt{2\pi \sigma^2}} \cdot \exp\left( -\frac{1}{2} \cdot \frac
 
 This is the squared standardized distance from the mean. The variance $\sigma^2$ shows the spread of data.
 
-## 2. Bivariate Normal Distribution with Independent Variables
+## 2. Bivariate Normal Distribution
 
 Let $X_1$ and $X_2$ be independent normal variables with means $\mu_1$, $\mu_2$ and variances $\sigma_1^2$, $\sigma_2^2$, respectively. 
 
@@ -205,7 +205,7 @@ Then the exponential part of the PDF is:
 \exp\left( -\frac{1}{2} (\mathbf{X} - \boldsymbol{\mu})^T \boldsymbol{\Sigma}^{-1} (\mathbf{X} - \boldsymbol{\mu}) \right)
 \$$
 
-## Final PDF of the Multivariate Normal Distribution
+### Final PDF of the Multivariate Normal Distribution with Independent Variables
 
 \$$
 f(\mathbf{X}) = \frac{1}{(2\pi)^{n/2} |\boldsymbol{\Sigma}|^{1/2}} \cdot \exp\left( -\frac{1}{2} (\mathbf{X} - \boldsymbol{\mu})^T \boldsymbol{\Sigma}^{-1} (\mathbf{X} - \boldsymbol{\mu}) \right)

@@ -164,11 +164,12 @@ $$
 
 Then the joint PDF is:
 
-$$f(x_1, x_2) = \frac{1}{2\pi \sigma_1 \sigma_2} \cdot \exp\left( -\frac{1}{2} \left[
+$$f(x_1, x_2)
+= \frac{1}{(2\pi)^{(2/2)} \cdot \left| \boldsymbol{\Sigma} \right|^{1/2}} \cdot \exp\left( -\frac{1}{2} (\mathbf{X} - \boldsymbol{\mu})^T \boldsymbol{\Sigma}^{-1} (\mathbf{X} - \boldsymbol{\mu}) \right)
+ = \frac{1}{2\pi \sigma_1 \sigma_2} \cdot \exp\left( -\frac{1}{2} \left[
 \frac{(x_1 - \mu_1)^2}{\sigma_1^2} +
 \frac{(x_2 - \mu_2)^2}{\sigma_2^2}
 \right] \right)
-= \frac{1}{(2\pi)^{(2/2)} \cdot \left| \boldsymbol{\Sigma} \right|^{1/2}} \cdot \exp\left( -\frac{1}{2} (\mathbf{X} - \boldsymbol{\mu})^T \boldsymbol{\Sigma}^{-1} (\mathbf{X} - \boldsymbol{\mu}) \right)
 $$
 
 ### Case 2: With correlation $(\rho)$ - Variables are not independent
@@ -228,9 +229,10 @@ Now compute the quadratic form:
 &= \begin{bmatrix}
 x_1 - \mu_1 & x_2 - \mu_2
 \end{bmatrix}
+ \frac{1}{(1-\rho^2)}
 \begin{bmatrix}
-\frac{1}{\sigma_2^2} & 0 \\
-0 & \frac{1}{\sigma_1^2}
+\frac{1}{\sigma_2^2} & \frac{-\rho}{ \sigma_1 \sigma_2} \\
+\frac{-\rho}{ \sigma_1 \sigma_2} & \frac{1}{\sigma_1^2}
 \end{bmatrix}
 \begin{bmatrix}
 x_1 - \mu_1 \\
@@ -241,16 +243,27 @@ x_2 - \mu_2
 x_1 - \mu_1 & x_2 - \mu_2
 \end{bmatrix}
 \begin{bmatrix}
-\frac{x_1 - \mu_1}{\sigma_2^2} \\
-\frac{x_2 - \mu_2}{\sigma_1^2}
+\frac{x_1 - \mu_1}{\sigma_2^2}- \frac{\rho(x_2 - \mu_2)}{ \sigma_1 \sigma_2} \\
+\frac{x_2 - \mu_2}{\sigma_1^2} - \frac{\rho(x_1 - \mu_2)}{ \sigma_1 \sigma_2}
 \end{bmatrix}
 \\
 &=\begin{bmatrix}
-\frac{(x_1 - \mu_1)^2}{\sigma_2^2}+\frac{(x_2 - \mu_2)^2}{\sigma_1^2}
+\frac{(x_1 - \mu_1)^2}{\sigma_2^2}+\frac{(x_2 - \mu_2)^2}{\sigma_1^2} - \frac{\rho(x_1 - \mu_1)(x_2 - \mu_2)}{ \sigma_1 \sigma_2} - \frac{\rho(x_1 - \mu_1)(x_2 - \mu_2)}{ \sigma_1 \sigma_2}
+\end{bmatrix}\\
+&=\begin{bmatrix}
+\frac{(x_1 - \mu_1)^2}{\sigma_2^2}+\frac{(x_2 - \mu_2)^2}{\sigma_1^2} - 2\frac{\rho(x_1 - \mu_1)(x_2 - \mu_2)}{ \sigma_1 \sigma_2} 
 \end{bmatrix}\\
 \end{aligned}
 $$
 
+Then the joint PDF is:
+
+$$f(x_1, x_2)
+ = \frac{1}{2\pi \sigma_1 \sigma_2 \(1-\rho^2)^{1/2}} \cdot \exp\left( -\frac{1}{2} \begin{bmatrix}
+\frac{(x_1 - \mu_1)^2}{\sigma_2^2}+\frac{(x_2 - \mu_2)^2}{\sigma_1^2} - 2\frac{\rho(x_1 - \mu_1)(x_2 - \mu_2)}{ \sigma_1 \sigma_2} 
+\end{bmatrix} \right)
+= \frac{1}{(2\pi)^{(2/2)} \cdot \left| \boldsymbol{\Sigma} \right|^{1/2}} \cdot \exp\left( -\frac{1}{2} (\mathbf{X} - \boldsymbol{\mu})^T \boldsymbol{\Sigma}^{-1} (\mathbf{X} - \boldsymbol{\mu}) \right)
+$$
 
 ## 3. Generalization to the Multivariate Case
 
@@ -281,13 +294,14 @@ X_n
 \vdots & \vdots & \ddots & \vdots \\
 \text{Cov}(X_n,X_1) & \cdots & \cdots & \text{Var}(X_n)
 \end{bmatrix}
+= \begin{bmatrix}
+\sigma_1^2 & \rho \sigma_1 \sigma_2 & \cdots & \rho \sigma_1 \sigma_n \\
+\rho \sigma_2 \sigma_1 & \sigma_2^2 & \cdots & \rho \sigma_2 \sigma_n \\
+\vdots & \vdots & \ddots & \vdots \\
+\rho \sigma_n \sigma_1 & \rho \sigma_n \sigma_2 & \cdots & \sigma_n^2
+\end{bmatrix}
 \$$
 
-Then the exponential part of the PDF is:
-
-\$$
-\exp\left( -\frac{1}{2} (\mathbf{X} - \boldsymbol{\mu})^T \boldsymbol{\Sigma}^{-1} (\mathbf{X} - \boldsymbol{\mu}) \right)
-\$$
 
 ### Final PDF of the Multivariate Normal Distribution with Independent Variables
 

@@ -104,37 +104,33 @@ Compute the Determinant of the Covariance Matrix
 Compute the Inverse of the Covariance Matrix
 
 $$
-\boldsymbol{\Sigma}^{-1} = \frac{1}{\left| \boldsymbol{\Sigma} \right|} Adj(\boldsymbol{\Sigma} \)
-$$
-
-
-$$
-\=\begin{bmatrix}
+\begin{aligned}
+\boldsymbol{\Sigma}^{-1} &= \frac{1}{\left| \boldsymbol{\Sigma} \right|} Adj(\boldsymbol{\Sigma} \)
+\\
+&=\begin{bmatrix}
 \sigma_1^2 & 0 \\
 0 & \sigma_2^2
 \end{bmatrix}^{-1}
-$$
-
-$$
-= \frac{1}{\sigma_1^2 \sigma_2^2} \begin{bmatrix}
+\\
+&= \frac{1}{\sigma_1^2 \sigma_2^2} \begin{bmatrix}
 \frac{1}{\sigma_1^2} & 0 \\
 0 & \frac{1}{\sigma_2^2}
 \end{bmatrix}
-$$
-
-$$
-=\begin{bmatrix}
+\\
+&=\begin{bmatrix}
 \frac{1}{\sigma_2^2} & 0 \\
 0 & \frac{1}{\sigma_1^2}
-\end{bmatrix}
-\$$
+\end{bmatrix}\\
+\end{aligned}
+$$
 
 
 Now compute the quadratic form:
 
 \$$
+\begin{aligned}
 (\mathbf{X} - \boldsymbol{\mu})^T \boldsymbol{\Sigma}^{-1} (\mathbf{X} - \boldsymbol{\mu})
-= \begin{bmatrix}
+&= \begin{bmatrix}
 x_1 - \mu_1 & x_2 - \mu_2
 \end{bmatrix}
 \begin{bmatrix}
@@ -145,30 +141,36 @@ x_1 - \mu_1 & x_2 - \mu_2
 x_1 - \mu_1 \\
 x_2 - \mu_2
 \end{bmatrix}
-\$$
-
-
-$$
+\\
+&= \begin{bmatrix}
+x_1 - \mu_1 & x_2 - \mu_2
+\end{bmatrix}
 \begin{bmatrix}
-\sigma_1^2 & 0 \\
-0 & \sigma_2^2
-\end{bmatrix}$$
+\frac{x_1 - \mu_1}{\sigma_2^2} \\
+\frac{x_2 - \mu_2}{\sigma_1^2}
+\end{bmatrix}
+\\
+&=\begin{bmatrix}
+\frac{(x_1 - \mu_1)^2}{\sigma_2^2}+\frac{(x_2 - \mu_2)^2}{\sigma_1^2}
+\end{bmatrix}\\
+\end{aligned}
+$$
 
-\[
-= \frac{(x_1 - \mu_1)^2}{\sigma_1^2} + \frac{(x_2 - \mu_2)^2}{\sigma_2^2}
-\]
 
-Thus, the exponential part becomes:
+Then the joint PDF is:
 
-\[
-\exp\left( -\frac{1}{2} (\mathbf{X} - \boldsymbol{\mu})^T \boldsymbol{\Sigma}^{-1} (\mathbf{X} - \boldsymbol{\mu}) \right)
-\]
+$$f(x_1, x_2) = \frac{1}{2\pi \sigma_1 \sigma_2} \cdot \exp\left( -\frac{1}{2} \left[
+\frac{(x_1 - \mu_1)^2}{\sigma_1^2} +
+\frac{(x_2 - \mu_2)^2}{\sigma_2^2}
+\right] \right)
+= \frac{1}{(2\pi)^{(2/2)} \cdot \left| \boldsymbol{\Sigma} \right|^{1/2}} \cdot \exp\left( -\frac{1}{2} (\mathbf{X} - \boldsymbol{\mu})^T \boldsymbol{\Sigma}^{-1} (\mathbf{X} - \boldsymbol{\mu}) \right)
+$$
 
-\section*{3. Generalization to Multivariate Case}
+## 3. Generalization to Multivariate Case
 
 Let $\mathbf{X} \in \mathbb{R}^n$ be a random vector following a multivariate normal distribution with mean vector $\boldsymbol{\mu}$ and covariance matrix $\boldsymbol{\Sigma}$.
 
-\[
+\$$
 \mathbf{X} =
 \begin{bmatrix}
 X_1 \\
@@ -183,9 +185,9 @@ X_n
 \vdots \\
 \mu_n
 \end{bmatrix}
-\]
+\$$
 
-\[
+\$$
 \boldsymbol{\Sigma} =
 \begin{bmatrix}
 \text{Var}(X_1) & \text{Cov}(X_1,X_2) & \cdots & \text{Cov}(X_1,X_n) \\
@@ -193,18 +195,16 @@ X_n
 \vdots & \vdots & \ddots & \vdots \\
 \text{Cov}(X_n,X_1) & \cdots & \cdots & \text{Var}(X_n)
 \end{bmatrix}
-\]
+\$$
 
 Then the exponential part of the PDF is:
 
-\[
+\$$
 \exp\left( -\frac{1}{2} (\mathbf{X} - \boldsymbol{\mu})^T \boldsymbol{\Sigma}^{-1} (\mathbf{X} - \boldsymbol{\mu}) \right)
-\]
+\$$
 
-\section*{4. Final PDF of the Multivariate Normal Distribution}
+## 4. Final PDF of the Multivariate Normal Distribution
 
-\[
+\$$
 f(\mathbf{X}) = \frac{1}{(2\pi)^{n/2} |\boldsymbol{\Sigma}|^{1/2}} \cdot \exp\left( -\frac{1}{2} (\mathbf{X} - \boldsymbol{\mu})^T \boldsymbol{\Sigma}^{-1} (\mathbf{X} - \boldsymbol{\mu}) \right)
-\]
-
-\end{document}
+\$$

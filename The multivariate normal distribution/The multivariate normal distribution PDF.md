@@ -80,6 +80,9 @@ cov(x_2,x_1) & var(x_2)
 \end{bmatrix}$$
 
 ### Case 1: Without correlation $(\rho=0)$  - Variables are independent
+![image](https://github.com/user-attachments/assets/a95b2ef7-73a7-477f-b47a-bcf2bec50e5e)![image](https://github.com/user-attachments/assets/e7d07ed4-0693-433d-ba3a-347c7c79bddb)
+
+
 Then, the covariance matrix becomes diagonal:
 
 $$
@@ -173,6 +176,8 @@ $$f(x_1, x_2)
 $$
 
 ### Case 2: With correlation $(\rho)$ - Variables are not independent
+![image](https://github.com/user-attachments/assets/c4932c56-e85d-4cdc-8690-51d601c23d62) ![image](https://github.com/user-attachments/assets/4900ce76-dd5b-4bee-99b9-2af3d248a197)
+
 
 $$\boldsymbol{\Sigma} = 
 \begin{bmatrix}
@@ -266,6 +271,7 @@ $$f(x_1, x_2)
 $$
 
 ## 3. Generalization to the Multivariate Case
+![image](https://github.com/user-attachments/assets/e7d9cd3d-9595-4754-95df-1d84bd62b861)
 
 Let $\mathbf{X} \in \mathbb{R}^n$ be a random vector following a multivariate normal distribution with mean vector $\boldsymbol{\mu}$ and covariance matrix $\boldsymbol{\Sigma}$.
 

@@ -156,12 +156,24 @@ If the whole vector $X$ is multivariate normal, then each component $X_j$ is als
 If $X \sim \mathcal{N}_n(\mu, \Sigma)$, then for all $j = 1, 2, \dots, n$:   $X_j \sim \mathcal{N}(\mu_j, \sigma_j^2)$
 
 **Example**:  
-If $
-X 
-= \begin{bmatrix} X_1 \\ X_2 \end{bmatrix} 
-\sim 
-\mathcal{N}_2\( \begin{bmatrix} 5 \\ 3 \end{bmatrix}, \begin{bmatrix} 4 & 1 \\ 1 & 2 \end{bmatrix} \)
-$
+If  
+
+$$
+X = \begin{bmatrix} 
+X_1 \\ 
+X_2 
+\end{bmatrix} 
+\sim \mathcal{N}_2\left( 
+\begin{bmatrix} 
+5 \\ 
+3 
+\end{bmatrix},\ 
+\begin{bmatrix} 
+4 & 1 \\ 
+1 & 2 \end{bmatrix} 
+\right)
+$$
+
 
 Then:  
 - $X_1 \sim \mathcal{N}(5, 4)$  

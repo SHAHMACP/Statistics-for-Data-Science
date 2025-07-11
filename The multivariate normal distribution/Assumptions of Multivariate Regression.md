@@ -1,5 +1,4 @@
-# Assumptions of Multivariate Regression – Explained Simply**
-
+# Assumptions of Multivariate Regression
 ---
 
 ###  1. **Linearity**

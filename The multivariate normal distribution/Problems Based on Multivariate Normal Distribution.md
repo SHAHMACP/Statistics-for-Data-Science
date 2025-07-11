@@ -168,12 +168,3 @@ P(V< 3)&=P(\frac{V - 2}{\sqrt{12}} < \frac{3 - 2}{\sqrt{12}}) \\
 $$
 
 ---
-
-
-
-Since this is a linear combination of normals, it's normal.
-
-Therefore, $(X, Y)$ is bivariate normal.
-
----
-

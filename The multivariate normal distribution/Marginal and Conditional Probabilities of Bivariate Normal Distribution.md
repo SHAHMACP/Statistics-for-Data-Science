@@ -32,6 +32,12 @@ $$
 X \sim \mathcal{N}(\mu_X, \sigma_X^2), \quad Y \sim \mathcal{N}(\mu_Y, \sigma_Y^2)
 $$
 
+The probability density function (PDF) of a marginal normal distribution with mean $\mu$ and variance $\sigma^2$ is:
+
+\$$
+f(x) = \frac{1}{\sqrt{2\pi \sigma^2}} \cdot \exp\left( -\frac{1}{2} \cdot \frac{(x - \mu)^2}{\sigma^2} \right)
+\$$
+
 ---
 
 ## Conditional Distribution
@@ -44,32 +50,34 @@ $$
 
 Where:
 
-- $$ \mu_{Y|X} = \mu_Y + \rho \cdot \frac{\sigma_Y}{\sigma_X}(x - \mu_X) $$
-- $$ \sigma_{Y|X}^2 = \sigma_Y^2(1 - \rho^2) $$
+ $$ \mu_{Y|X} = \mu_Y + \rho \cdot \frac{\sigma_Y}{\sigma_X}(x - \mu_X) $$
+ $$ \sigma_{Y|X}^2 = \sigma_Y^2(1 - \rho^2) $$
 
 This shows that knowing one variable changes our prediction and uncertainty about the other.
 
 ---
 
 ## ✅ Example 
-*  Imagine we’re studying height (in cm) and weight (in kg) of students in a college. We assume that these two variables are jointly normally distributed, i.e., they follow a bivariate normal distribution.
-* If you look at just one variable (say, height) ignoring the other (weight), that’s a marginal distribution.
+*  Imagine we’re studying the height (in cm) and weight (in kg) of students in a college. We assume that these two variables are jointly normally distributed, i.e., they follow a bivariate normal distribution.
+* If you look at just one variable (say, height), ignoring the other (weight), that’s a marginal distribution.
 * Now imagine you know a student’s weight is 72 kg, and you ask:
 “What is the probability distribution of their height, given they weigh 72 kg?”. That’s a conditional distribution. Because height and weight are correlated, knowing one gives extra information about the other.
 
+---
+
 ## Problems
 
-> The amount of rainfall recorded at a US weather station in January is modeled as a random variable $X$, and the amount in February is a random variable $Y$.  
-> Assume:  
-> $$
+The amount of rainfall recorded at a US weather station in January is modeled as a random variable $X$, and the amount in February is a random variable $Y$.  
+Assume:  
+ $$
 (X, Y) \sim BVN(\mu_X = 6, \mu_Y = 4, \sigma_X = 1, \sigma_Y = 0.5, \rho = 0.1)
 $$
->  
-> Find:  
-> 1. \ P(X \leq 5) \)  
-> 2. \( P(Y \leq 5 \mid X = 5) \)
+  
+Find:  
+ 1. \ P(X \leq 5) \)  
+2. \( P(Y \leq 5 \mid X = 5) \)
 
----
+
 
 ### (i) Marginal Probability \( P(X \leq 5) \)
 
@@ -124,16 +132,3 @@ P(Y \leq 5 \mid X = 5) = P(Z \leq 2.11) = \boxed{0.9826}
 - \( P(Y \leq 5 \mid X = 5) = \boxed{0.9826} \)
 
 ---
-
-## 🧠 Summary
-
-| Concept                  | Formula / Result                                                  |
-|--------------------------|-------------------------------------------------------------------|
-| Marginal Distribution    | \( X \sim N(\mu_X, \sigma_X^2) \)                                |
-| Conditional Mean         | \( \mu_{Y|X} = \mu_Y + \rho \cdot \frac{\sigma_Y}{\sigma_X}(x - \mu_X) \) |
-| Conditional Variance     | \( \sigma_{Y|X}^2 = \sigma_Y^2(1 - \rho^2) \)                    |
-| Conditional Distribution | \( Y \mid X = x \sim \mathcal{N}(\mu_{Y|X}, \sigma_{Y|X}^2) \)    |
-
----
-
-📌 You can further explore this using simulation in Python or R. Let me know if you want the code!

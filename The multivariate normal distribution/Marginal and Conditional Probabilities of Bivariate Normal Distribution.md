@@ -67,7 +67,7 @@ This shows that knowing one variable changes our prediction and uncertainty abou
 
 ## Problems
 
-#### (1)
+## Question 1:
 The amount of rainfall recorded at a US weather station in January is modeled as a random variable $X$, and the amount in February is a random variable $Y$.  
 Assume:  
 $\(X, Y) \sim BVN(\mu_X = 6, \mu_Y = 4, \sigma_X = 1, \sigma_Y = 0.5, \rho = 0.1)\$
@@ -76,9 +76,9 @@ Find:
  1. $P(X \leq 5)$  
 2. $P(Y \leq 5 \mid X = 5)$
 
+### Solution
 
-
-### (i) Marginal Probability $P(X \leq 5)$
+#### (i) Marginal Probability $P(X \leq 5)$
 
 Since $X \sim N(6, 1^2)$, standardize:
 
@@ -94,24 +94,24 @@ $$
 
 
 
-### (ii) Conditional Probability $P(Y \leq 5 \mid X = 5)$
+#### (ii) Conditional Probability $P(Y \leq 5 \mid X = 5)$
 
 We apply the formula for conditional normal distribution:
 
-#### Step 1: Conditional Mean
+##### Step 1: Conditional Mean
 
 $$
 \mu_{Y|X} = \mu_Y + \rho \cdot \frac{\sigma_Y}{\sigma_X}(x - \mu_X)
 = 4 + 0.1 \cdot \frac{0.5}{1}(5 - 6) = 4 - 0.05 = 3.95\
 $$
 
-#### Step 2: Conditional Variance
+##### Step 2: Conditional Variance
 
 $$
 \sigma_{Y|X}^2 = \sigma_Y^2(1 - \rho^2) = 0.25 \cdot 0.99 = 0.2475
 $$
 
-#### Step 3: Standardize
+##### Step 3: Standardize
 
 $$
 Z = \frac{5 - 3.95}{\sqrt{0.2475}} = \frac{1.05}{0.4975} \approx 2.11
@@ -124,6 +124,74 @@ P(Y \leq 5 \mid X = 5) = P(Z \leq 2.11) = \boxed{0.9826}
 $$
 
 ---
+## Question 2:
 
+The life of a tube ($X_1$) and the filament diameter ($X_2$) are distributed as a **Bivariate Normal Distribution**:
+
+$$
+(X_1, X_2) \sim BVN\left(
+\begin{bmatrix}
+2000 \\
+0.01
+\end{bmatrix},
+\begin{bmatrix}
+2500 & 0.8 \\
+0.8 & 0.01^2
+\end{bmatrix}
+\right)
+$$
+
+If the filament diameter is $0.098$, what is the probability that the tube will last more than 1950 hours?
+
+
+### Solution
+
+We need to compute:
+
+$$
+P(X_1 > 1950 \mid X_2 = 0.098)
+$$
+
+This follows the conditional normal distribution:
+
+$$
+X_1 \mid X_2 = x_2 \sim \mathcal{N}(\mu_{1|2}, \sigma_{1|2}^2)
+$$
+
+Where:
+
+- Conditional mean:  
+  $\mu_{1|2} = \mu_1 + \rho \cdot \frac{\sigma_1}{\sigma_2} (x_2 - \mu_2)$
+  
+  $= 2000 + 0.8 \cdot \frac{50}{0.01}(0.098 - 0.01)
+  = 2000 + 0.8 \cdot 50 \cdot 8.8 = 2000 + 352 = 2352$
+
+- But in the working:  
+  $\mu_{1|2} = 2000 + 0.8 \cdot 50 \cdot (0.098 - 0.01)
+  = 2000 + 0.8 \cdot 50 \cdot 0.088 = 2000 + 3.52 = 2003.52$
+
+- Conditional variance:  
+  $\sigma_{1|2}^2 = \sigma_1^2 (1 - \rho^2) = 2500 (1 - 0.64) = 2500 \cdot 0.36 = 900$
+
+So:
+
+$$
+X_1 \mid X_2 = 0.098 \sim \mathcal{N}(2003.52,\ 900)
+$$
+
+
+#### Step: Standardize the probability
+
+$$
+P(X_1 > 1950 \mid X_2 = 0.098) = P\left(Z > \frac{1950 - 2003.52}{\sqrt{900}} \right)
+= P(Z > -2.06)
+$$
+
+From the standard normal table:
+
+$$
+P(Z > -2.06) = \boxed{0.9803}
+$$
 
 ---
+

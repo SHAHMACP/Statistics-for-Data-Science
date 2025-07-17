@@ -129,22 +129,28 @@ $$
 The life of a tube ($X_1$) and the filament diameter ($X_2$) are distributed as a **Bivariate Normal Distribution**:
 
 $$
-(X_1, X_2) \sim BVN\left(
-\begin{bmatrix}
-2000 \\
-0.01
-\end{bmatrix},
-\begin{bmatrix}
-2500 & 0.8 \\
-0.8 & 0.01^2
-\end{bmatrix}
-\right)
+(X_1, X_2) \sim BVN\(2000, 0.1, 2500 , 0.01, 0.87)
 $$
 
 If the filament diameter is $0.098$, what is the probability that the tube will last more than 1950 hours?
 
 
 ### Solution
+
+Given that 
+
+$$
+(X_1, X_2) \sim BVN\left(
+\begin{bmatrix}
+2000 \\
+0.1
+\end{bmatrix},
+\begin{bmatrix}
+2500 & 0.87 \\
+0.87 & 0.01
+\end{bmatrix}
+\right)
+$$
 
 We need to compute:
 
@@ -163,34 +169,30 @@ Where:
 - Conditional mean:  
   $\mu_{1|2} = \mu_1 + \rho \cdot \frac{\sigma_1}{\sigma_2} (x_2 - \mu_2)$
   
-  $= 2000 + 0.8 \cdot \frac{50}{0.01}(0.098 - 0.01)
-  = 2000 + 0.8 \cdot 50 \cdot 8.8 = 2000 + 352 = 2352$
-
-- But in the working:  
-  $\mu_{1|2} = 2000 + 0.8 \cdot 50 \cdot (0.098 - 0.01)
-  = 2000 + 0.8 \cdot 50 \cdot 0.088 = 2000 + 3.52 = 2003.52$
+  $= 2000 + 0.87 \cdot \frac{50}{0.1}(0.098 - 0.1)
+  = 1999.13$
 
 - Conditional variance:  
-  $\sigma_{1|2}^2 = \sigma_1^2 (1 - \rho^2) = 2500 (1 - 0.64) = 2500 \cdot 0.36 = 900$
+  $\sigma_{1|2}^2 = \sigma_1^2 (1 - \rho^2) = 2500 (1 - 0.7569) = 2500 \cdot 0.2431 = 607.75$
 
 So:
 
 $$
-X_1 \mid X_2 = 0.098 \sim \mathcal{N}(2003.52,\ 900)
+X_1 \mid X_2 = 0.098 \sim \mathcal{N}(1999.13,\ 607.75)
 $$
 
 
 #### Step: Standardize the probability
 
 $$
-P(X_1 > 1950 \mid X_2 = 0.098) = P\left(Z > \frac{1950 - 2003.52}{\sqrt{900}} \right)
-= P(Z > -2.06)
+P(X_1 > 1950 \mid X_2 = 0.098) = P\left(Z > \frac{1950 - 1999.13}{\sqrt{607.75}} \right)
+= P(Z > -1.99)
 $$
 
 From the standard normal table:
 
 $$
-P(Z > -2.06) = \boxed{0.9803}
+P(Z > -1.99) = \boxed{0.9767}
 $$
 
 ---

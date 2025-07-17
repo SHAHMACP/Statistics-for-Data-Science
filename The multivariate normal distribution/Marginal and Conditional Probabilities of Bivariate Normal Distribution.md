@@ -67,7 +67,79 @@ This shows that knowing one variable changes our prediction and uncertainty abou
 
 ## Problems
 
-## Question 1:
+## Question 1: 
+
+Let $X$ and $Y$ be jointly normal random variables such that:
+
+- $X \sim N(1, 1)$
+- $Y \sim N(0, 4)$
+- Correlation $\rho = \frac{1}{2}$
+
+Find:
+
+$$
+P(Y > 1 \mid X = 2)
+$$
+
+
+###  Solution
+
+We use the formula for conditional distribution:
+
+$$
+Y \mid X = x \sim \mathcal{N} \left( \mu_Y + \rho \cdot \frac{\sigma_Y}{\sigma_X}(x - \mu_X),\ \sigma_Y^2 (1 - \rho^2) \right)
+$$
+
+#### Step 1: Plug in known values
+
+- $\mu_X = 1, \sigma_X^2 = 1 \Rightarrow \sigma_X = 1$
+- $\mu_Y = 0, \sigma_Y^2 = 4 \Rightarrow \sigma_Y = 2$
+- $\(\rho = \frac{1}{2} \), \( x = 2)$
+
+#### Step 2: Conditional Mean
+
+$$
+\mu_{Y|X=2} = 0 + \frac{1}{2} \cdot \frac{2}{1} \cdot (2 - 1) = 1
+$$
+
+#### Step 3: Conditional Variance
+
+$$
+\sigma_{Y|X}^2 = 4 (1 - \rho^2) = 4 \left(1 - \frac{1}{4} \right) = 4 \cdot \frac{3}{4} = 3
+$$
+
+So:
+
+$$
+Y \mid X = 2 \sim \mathcal{N}(1, 3)
+$$
+
+
+#### Step 4: Compute the probability
+
+We want:
+
+$$
+P(Y > 1 \mid X = 2)
+$$
+
+Standardize:
+
+$$
+Z = \frac{1 - 1}{\sqrt{3}} = 0
+$$
+
+So:
+
+$$
+P(Y > 1 \mid X = 2) = P(Z > 0) = \boxed{0.5}
+$$
+
+---
+
+
+
+## Question 2:
 The amount of rainfall recorded at a US weather station in January is modeled as a random variable $X$, and the amount in February is a random variable $Y$.  
 Assume:  
 $\(X, Y) \sim BVN(\mu_X = 6, \mu_Y = 4, \sigma_X = 1, \sigma_Y = 0.5, \rho = 0.1)\$
@@ -124,7 +196,7 @@ P(Y \leq 5 \mid X = 5) = P(Z \leq 2.11) = \boxed{0.9826}
 $$
 
 ---
-## Question 2:
+## Question 3:
 
 The life of a tube ($X_1$) and the filament diameter ($X_2$) are distributed as a **Bivariate Normal Distribution**:
 
@@ -196,4 +268,3 @@ P(Z > -1.99) = \boxed{0.9767}
 $$
 
 ---
-

@@ -67,68 +67,63 @@ This shows that knowing one variable changes our prediction and uncertainty abou
 
 ## Problems
 
+#### (1)
 The amount of rainfall recorded at a US weather station in January is modeled as a random variable $X$, and the amount in February is a random variable $Y$.  
 Assume:  
- $$
-(X, Y) \sim BVN(\mu_X = 6, \mu_Y = 4, \sigma_X = 1, \sigma_Y = 0.5, \rho = 0.1)
-$$
+$\(X, Y) \sim BVN(\mu_X = 6, \mu_Y = 4, \sigma_X = 1, \sigma_Y = 0.5, \rho = 0.1)\$
   
 Find:  
- 1. \ P(X \leq 5) \)  
-2. \( P(Y \leq 5 \mid X = 5) \)
+ 1. $P(X \leq 5)$  
+2. $P(Y \leq 5 \mid X = 5)$
 
 
 
-### (i) Marginal Probability \( P(X \leq 5) \)
+### (i) Marginal Probability $P(X \leq 5)$
 
-Since \( X \sim N(6, 1^2) \), standardize:
+Since $X \sim N(6, 1^2)$, standardize:
 
-\[
+$$
 Z = \frac{X - \mu_X}{\sigma_X} = \frac{5 - 6}{1} = -1
-\]
+$$
 
 From Z-table:
 
-\[
+$$
 P(X \leq 5) = P(Z \leq -1) = \boxed{0.1587}
-\]
+$$
 
----
 
-### (ii) Conditional Probability \( P(Y \leq 5 \mid X = 5) \)
+
+### (ii) Conditional Probability $P(Y \leq 5 \mid X = 5)$
 
 We apply the formula for conditional normal distribution:
 
 #### Step 1: Conditional Mean
 
-\[
+$$
 \mu_{Y|X} = \mu_Y + \rho \cdot \frac{\sigma_Y}{\sigma_X}(x - \mu_X)
-= 4 + 0.1 \cdot \frac{0.5}{1}(5 - 6) = 4 - 0.05 = 3.95
-\]
+= 4 + 0.1 \cdot \frac{0.5}{1}(5 - 6) = 4 - 0.05 = 3.95\
+$$
 
 #### Step 2: Conditional Variance
 
-\[
+$$
 \sigma_{Y|X}^2 = \sigma_Y^2(1 - \rho^2) = 0.25 \cdot 0.99 = 0.2475
-\]
+$$
 
 #### Step 3: Standardize
 
-\[
+$$
 Z = \frac{5 - 3.95}{\sqrt{0.2475}} = \frac{1.05}{0.4975} \approx 2.11
-\]
+$$
 
 From Z-table:
 
-\[
+$$
 P(Y \leq 5 \mid X = 5) = P(Z \leq 2.11) = \boxed{0.9826}
-\]
+$$
 
 ---
 
-## ✅ Final Answers
-
-- \( P(X \leq 5) = \boxed{0.1587} \)  
-- \( P(Y \leq 5 \mid X = 5) = \boxed{0.9826} \)
 
 ---

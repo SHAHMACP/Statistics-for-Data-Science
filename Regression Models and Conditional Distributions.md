@@ -1,3 +1,90 @@
+# Regression Models and Conditional Distributions
+
+Regression models are powerful tools used to understand and predict the relationship between a **dependent variable** (often $Y$) and one or more **independent variables** (often $X$). These models predict the value of the dependent variable based on the values of the independent variables. 
+
+---
+
+## What Is a Regression Model?
+
+A **regression model** attempts to estimate:
+
+$$
+\mathbb{E}[Y \mid X] = f(X) = \beta_0 + \beta_1 X
+$$
+
+Where:
+- $Y$ is the dependent or output variable
+- $X$ is the independent or input variable(s)
+- $f(X)$ is a function, often assumed to be linear in basic models
+
+
+
+And it assumes the **conditional distribution** of $Y$ given $X$ is **normal**:
+
+$$
+Y \mid X = x \sim \mathcal{N}(\beta_0 + \beta_1 x, \sigma^2)
+$$
+
+That is, for a fixed value of $X$, the values of $Y$ follow a **normal distribution** centered at the regression line.
+
+---
+
+## Example: Predicting House Prices
+
+Let’s say you're predicting house prices based on square footage.
+
+- Let $X$ = square footage  
+- Let $Y$ = house price
+
+The model assumes:
+
+$$
+Y \mid X = x \sim \mathcal{N}(\beta_0 + \beta_1 x, \sigma^2)
+$$
+
+So for houses with 1500 sqft, prices are **normally distributed** around a **mean predicted by the regression line**.
+
+---
+
+## Conditional Distribution in Bivariate Normal
+
+From the bivariate normal theory, we know:
+
+If
+
+$$
+(X, Y) \sim BVN\left(
+\begin{bmatrix} \mu_X \\ \mu_Y \end{bmatrix},
+\begin{bmatrix}
+\sigma_X^2 & \rho \sigma_X \sigma_Y \\
+\rho \sigma_X \sigma_Y & \sigma_Y^2
+\end{bmatrix}
+\right)
+$$
+
+**The conditional mean formula:**
+
+$$
+\mu_{Y \mid X = x} =\mathbb{E}[Y \mid X = x] = \mu_Y + \rho \frac{\sigma_Y}{\sigma_X} (x - \mu_X)
+$$
+
+Can be rearranged as:
+
+$$
+\mu_{Y \mid X = x}= 
+\left( \mu_Y - \rho \frac{\sigma_Y}{\sigma_X} \mu_X \right)
++ 
+(\rho \frac{\sigma_Y}{\sigma_X}) x = \beta_0 + \beta_1 x
+$$
+
+This is the **regression line** derived directly from the **conditional mean**.
+
+So regression is naturally embedded in the bivariate normal distribution.
+
+---
+
+
+
 # Assumptions of Multivariate Regression
 ---
 

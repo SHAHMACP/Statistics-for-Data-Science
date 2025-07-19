@@ -1,4 +1,4 @@
-# ANOVA, ANCOVA, MANOVA, and MANCOVA – Definitions and Examples
+# ANOVA, ANCOVA, MANOVA, and MANCOVA
 
 This repository explains four related statistical methods using a clear structure:  
 **Method → Simple Definition → Real-World Example**
@@ -70,9 +70,10 @@ You evaluate how teaching methods A, B, and C affect both **math scores** and **
 > - Covariate: Previous GPA  
 > - ➤ Use MANCOVA to see real group differences after adjusting for GPA.
 
-![Uploading image.png…]()
+<img width="1863" height="1117" alt="image" src="https://github.com/user-attachments/assets/6c775242-ac58-4c07-bc52-8ed51aed4541" />
 
-![Uploading image.png…]()
+<img width="1912" height="1117" alt="image" src="https://github.com/user-attachments/assets/6a1cbf11-7b92-4f29-bb44-000549b9affc" />
+
 
 ---
 

@@ -111,3 +111,81 @@ You evaluate how teaching methods A, B, and C affect both **math scores** and **
 | Psychology   | Therapy effects on stress + mood (controlling for baseline anxiety score)       |
 
 ---
+
+---
+
+## Alternate Example: Exercise, Diet, and Weight Loss
+
+A health researcher wants to evaluate the effects of **exercise programs** and **diet types** on participants’ **weight loss**, **BMI**, and **cholesterol level**.
+
+The researcher also records **baseline weight** before the program starts.
+
+---
+
+### 🔹 ANOVA
+
+ **Question:**  
+> Does the **type of exercise program** affect **weight loss**?
+
+- IV: Exercise Program (e.g., Cardio, Strength, Yoga)  
+- DV: Weight Loss  
+- ➤ Use **One-Way ANOVA** to test for group mean differences
+
+---
+
+### 🔹 ANCOVA
+
+ **Question:**  
+> Does the **type of exercise program** affect **weight loss**, **after adjusting for baseline weight**?
+
+- IV: Exercise Program  
+- DV: Weight Loss  
+- Covariate: Initial (pre-program) weight  
+- ➤ Use **ANCOVA** to remove baseline influence before comparing programs
+
+---
+
+### 🔹 MANOVA
+
+ **Question:**  
+> Do different **exercise programs** affect multiple outcomes like **weight loss**, **BMI**, and **cholesterol**?
+
+- IV: Exercise Program  
+- DVs: Weight Loss, BMI, Cholesterol  
+- ➤ Use **MANOVA** to evaluate combined health effects
+
+---
+
+### 🔹 MANCOVA
+
+ **Question:**  
+> Do exercise programs affect **weight loss, BMI, and cholesterol**, after controlling for **initial weight**?
+
+- IV: Exercise Program  
+- DVs: Weight Loss, BMI, Cholesterol  
+- Covariate: Baseline weight  
+- ➤ Use **MANCOVA** to get accurate group comparisons while controlling for weight
+
+---
+
+## You Can Also Add a Second IV → Two-Way Versions
+
+- Add **Diet Type** as a second IV (e.g., High Protein, Low Carb, Balanced)  
+- Then apply:
+  - **Two-Way ANOVA**: Exercise × Diet → Weight Loss  
+  - **Two-Way MANOVA**: Exercise × Diet → [Weight Loss, BMI, Cholesterol]  
+  - **Two-Way MANCOVA**: Add covariate (e.g., baseline weight or age)
+
+---
+
+## Summary Table for Exercise Example
+
+| Model     | DVs                           | Covariate     | IV(s)                  | Example                                            |
+|-----------|-------------------------------|----------------|-------------------------|----------------------------------------------------|
+| ANOVA     | Weight Loss                   | ❌ No          | Exercise Program         | Compare mean weight loss across exercises          |
+| ANCOVA    | Weight Loss                   | ✅ Baseline Weight | Exercise Program      | Compare weight loss after adjusting for baseline   |
+| MANOVA    | Weight Loss, BMI, Cholesterol | ❌ No          | Exercise Program         | Compare exercises on 3 outcomes together           |
+| MANCOVA   | Weight Loss, BMI, Cholesterol | ✅ Baseline Weight | Exercise Program      | Same, adjusted for starting weight                 |
+
+---
+

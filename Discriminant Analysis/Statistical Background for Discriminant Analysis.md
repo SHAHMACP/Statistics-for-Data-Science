@@ -3,6 +3,9 @@
 This document introduces essential statistical concepts used as the foundation for understanding **Discriminant Analysis**. 
 The concepts are organized clearly with definitions and examples for easy understanding.
 
+<img width="1894" height="1065" alt="image" src="https://github.com/user-attachments/assets/a10287c1-055c-4148-a013-9782748f37f0" />
+
+
 ---
 
 ## 🟢 1. Descriptive Statistics
@@ -86,40 +89,6 @@ Predicts the value of a dependent variable using one or more independent variabl
 
 - **Multivariate Regression**: Multiple predictors  
   _Example_: Predicting house price using area, number of rooms, and location.
-
----
-
-## 🔷 Multivariate Statistical Techniques
-
-### 🔹 8. Factor Analysis
-
-**Definition**:  
-Reduces a large number of variables into a smaller set of underlying factors.
-
-**Example**:
-- Reducing 20 personality test questions into 3 main traits: introversion, stability, curiosity.
-
----
-
-### 🔹 9. Cluster Analysis
-
-**Definition**:  
-Groups similar data points into clusters without predefined labels.
-
-**Examples**:
-- Grouping customers based on purchase behavior.
-- Clustering diseases based on symptoms.
-
----
-
-### 🔹 10. Discriminant Analysis
-
-**Definition**:  
-Used to classify observations into **predefined groups** using predictor variables.
-
-**Examples**:
-- Classifying emails as spam or not spam.
-- Classifying tumors as benign or malignant.
 
 ---
 

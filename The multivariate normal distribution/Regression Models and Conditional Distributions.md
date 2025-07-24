@@ -268,4 +268,181 @@ A model predicting both **math** and **science scores** from **hours studied** m
 
 ---
 
+## 📊 Question: Multivariate Linear Regression
+
+The data in the table relate grams of plant dry weight $Y$, to present soil organic matter $X_1$ and kilograms of supplemental soil nitrogen added per 100 square meters $X_2$.
+
+| Y (Dry weight) | X₁ (Soil organic matter) | X₂ (Soil nitrogen) |
+|----------------|---------------------------|---------------------|
+| 78.5           | 7                         | 2.6                 |
+| 74.3           | 1                         | 2.9                 |
+| 104.3          | 11                        | 5.6                 |
+| 87.6           | 11                        | 3.1                 |
+
+**i.** Obtain the multivariate regression equation.
+
+**ii.** Predict the dry weight when soil organic matter = 5 and soil nitrogen = 4.
+
+
+
+## ✅ Answer
+
+We want to fit a multivariate linear regression model of the form:
+
+$$
+Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2
+$$
+
+
+
+### Step 1: Set up the matrices
+
+Let:
+
+$$
+X = 
+\begin{bmatrix}
+1 & 7 & 2.6 \\
+1 & 1 & 2.9 \\
+1 & 11 & 5.6 \\
+1 & 11 & 3.1 \\
+\end{bmatrix},
+\quad
+Y = 
+\begin{bmatrix}
+78.5 \\
+74.3 \\
+104.3 \\
+87.6 \\
+\end{bmatrix}
+$$
+
+
+### Step 2: Use the Normal Equation
+
+We compute:
+
+$$
+\boldsymbol{\beta} = (X^T X)^{-1} X^T Y
+$$
+
+
+#### Compute $X^T X$
+
+$$
+X^T X =
+\begin{bmatrix}
+1 & 1 & 1 & 1 \\
+7 & 1 & 11 & 11 \\
+2.6 & 2.9 & 5.6 & 3.1 \\
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+1 & 7 & 2.6 \\
+1 & 1 & 2.9 \\
+1 & 11 & 5.6 \\
+1 & 11 & 3.1 \\
+\end{bmatrix} =
+\begin{bmatrix}
+4 & 30 & 14.2 \\
+30 & 292 & 116.8 \\
+14.2 & 116.8 & 56.14 \\
+\end{bmatrix}
+$$
+
+Then 
+
+$$
+(X^T X)^{-1} = 
+\begin{bmatrix}
+4 & 30 & 14.2 \\
+30 & 292 & 116.8 \\
+14.2 & 116.8 & 56.14 \\
+\end{bmatrix}^{-1} = 
+\begin{bmatrix}
+2.4752 & -0.0230725 & -0.578072 \\
+-0.0230725 & 0.0206249 & -0.0370744 \\
+-0.578072 & -0.0370744 & 0.241163 \\
+\end{bmatrix}
+$$
+
+
+#### Compute $X^T Y$
+
+$$
+X^T Y =
+\begin{bmatrix}
+1 & 1 & 1 & 1 \\
+7 & 1 & 11 & 11 \\
+2.6 & 2.9 & 5.6 & 3.1 \\
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+78.5 \\
+74.3 \\
+104.3 \\
+87.6 \\
+\end{bmatrix} =
+\begin{bmatrix}
+344.7 \\
+2734.7 \\
+1275.21 \\
+\end{bmatrix}
+$$
+
+
+#### Compute $\boldsymbol{\beta} = (X^T X)^{-1} X^T Y$
+
+
+$$
+\boldsymbol{\beta} = (X^T X)^{-1} X^T Y
+= \begin{bmatrix}
+2.4752 & -0.0230725 & -0.578072 \\
+-0.0230725 & 0.0206249 & -0.0370744 \\
+-0.578072 & -0.0370744 & 0.241163 \\
+\end{bmatrix} 
+\cdot
+\begin{bmatrix}
+344.7 \\
+2734.7 \\
+1275.21 \\
+\end{bmatrix}
+= \begin{bmatrix}
+52.9416 \\
+1.17213 \\
+6.88518 \\
+\end{bmatrix}
+$$
+
+
+
+### ✅ Final Regression Equation:
+
+$$
+\hat{Y} =
+$$
+
+
+
+
+
+
+
+### Step 3: Prediction
+
+Let $X_1 = 5$, $X_2 = 4$. Then:
+
+$$
+\hat{Y} = 
+$$
+
+
+
+### 📌 Final Answer:
+
+- **Regression equation:**  
+  $$\hat{Y} = 70.06 + 2.75 X_1 + 0.62 X_2$$
+
+- **Prediction at $X_1 = 5$, $X_2 = 4$:**  
+  $$\hat{Y} = 86.29$$
 

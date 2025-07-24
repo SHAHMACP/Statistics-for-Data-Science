@@ -257,25 +257,15 @@ A model predicting both **math** and **science scores** from **hours studied** m
 
 ### 🚫 Effect of Assumption Violations:
 
-| Violation                       | Impact on Model                                                                |
+| Violation                       | Impact on Model                                                                | 
 | ------------------------------- | ------------------------------------------------------------------------------ |
 | **Linearity**                   | Predictors may have **nonlinear effects**, leading to bias in predictions      |
-| **Independence**                | Causes **underestimation of standard errors**, inflating type I error          |
-| **Non-normality**               | Affects **p-values** and **confidence intervals**, especially in small samples |
-| **Heteroscedasticity**          | Leads to **inefficient estimates** and biased standard errors                  |
-| **Multicollinearity**           | Regression coefficients become **unstable** and hard to interpret              |
-| **Unequal covariance matrices** | Results in **incorrect significance testing** in MANOVA/MANCOVA                |
+| **Independence**                | Causes **underestimation of standard errors**, inflating type I error          | 
+| **Non-normality**               | Affects **p-values** and **confidence intervals**, especially in small samples | 
+| **Heteroscedasticity**          | Leads to **inefficient estimates** and biased standard errors                  | 
+| **Multicollinearity**           | Regression coefficients become **unstable** and hard to interpret              | 
+| **Unequal covariance matrices** | Results in **incorrect significance testing** in MANOVA/MANCOVA                |                                                     
 
 ---
 
-### 🧠 Summary Table:
 
-| Assumption Violation | Distortion Caused                                   |
-| -------------------- | --------------------------------------------------- |
-| Linearity            | Biased slope estimates                              |
-| Multicollinearity    | Inflated variance, unstable coefficients            |
-| Heteroscedasticity   | Incorrect standard errors, misleading significance  |
-| Non-normality        | Affects hypothesis tests and prediction intervals   |
-| Independence         | Overestimates significance due to underestimated SE |
-
----

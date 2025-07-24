@@ -228,4 +228,54 @@ The line may not be the best fit—it's either always over or under-predicting.
  **Example**:
 If you predict that all students will get 5 marks more than they actually do, the residuals are not centered around 0.
 
+
+---
+
+## ✅ **Summary - The key assumptions underlying a multivariate regression model**
+
+
+| Assumption                                               | Description                                                                                   |
+| -------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| **1. Linearity**                                         | The relationship between independent and dependent variables is linear.                       |
+| **2. Independence of observations**                      | Each observation (data point) is independent of others.                                       |
+| **3. Multivariate normality**                            | The dependent variables (DVs) are **jointly normally distributed** for each level of the IVs. |
+| **4. Homoscedasticity**                                  | The **variance of the residuals** is constant across all levels of the independent variables. |
+| **5. No multicollinearity**                              | Independent variables are not highly correlated with each other.                              |
+| **6. Covariance matrices equality (for MANOVA/MANCOVA)** | Groups should have equal **variance-covariance matrices**.                                    |
+
+---
+
+### 📘 Example:
+
+A model predicting both **math** and **science scores** from **hours studied** must assume:
+
+* Both scores are **normally distributed** for given hours
+* The effect of hours is **linear**
+* Errors have **equal variance**
+
+---
+
+### 🚫 Effect of Assumption Violations:
+
+| Violation                       | Impact on Model                                                                |
+| ------------------------------- | ------------------------------------------------------------------------------ |
+| **Linearity**                   | Predictors may have **nonlinear effects**, leading to bias in predictions      |
+| **Independence**                | Causes **underestimation of standard errors**, inflating type I error          |
+| **Non-normality**               | Affects **p-values** and **confidence intervals**, especially in small samples |
+| **Heteroscedasticity**          | Leads to **inefficient estimates** and biased standard errors                  |
+| **Multicollinearity**           | Regression coefficients become **unstable** and hard to interpret              |
+| **Unequal covariance matrices** | Results in **incorrect significance testing** in MANOVA/MANCOVA                |
+
+---
+
+### 🧠 Summary Table:
+
+| Assumption Violation | Distortion Caused                                   |
+| -------------------- | --------------------------------------------------- |
+| Linearity            | Biased slope estimates                              |
+| Multicollinearity    | Inflated variance, unstable coefficients            |
+| Heteroscedasticity   | Incorrect standard errors, misleading significance  |
+| Non-normality        | Affects hypothesis tests and prediction intervals   |
+| Independence         | Overestimates significance due to underestimated SE |
+
 ---

@@ -1,3 +1,10 @@
+# Discriminant Analysis
+
+## Definition:
+Discriminant Analysis is a supervised classification technique used to predict group membership based on observed features.
+
+It finds a linear combination of predictor variables (like age, income, test scores) that best separates observations into predefined classes (like pass/fail, spam/not spam, diseased/healthy).
+
 ## Use of Discriminant Analysis in Research
 
 During a study, researchers often encounter critical questions such as:

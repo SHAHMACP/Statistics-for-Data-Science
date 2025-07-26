@@ -74,28 +74,17 @@ Mathematically:
 
 $$H_0: \mu_1 = \mu_2 = \dots = \mu_k$$
 
-Where $\mu_k $ is the mean vector of the independent variables for group $k$.
+Where $\mu_k$ is the mean vector of the independent variables for group $k$.
 
----
 
 ### **Alternative Hypothesis (H₁)**:
 > The group means are **not equal**.  
-At least one group is significantly different from the others in terms of the independent variables.
+(At least one group is significantly different from the others in terms of the independent variables).
 
-\[
-H_1: \mu_i \ne \mu_j \quad \text{for some } i \ne j
-\]
+$$H_1: \mu_i \ne \mu_j \quad \text{for some } i \ne j$$
 
 ---
 
-## 🧠 What It Means
-
-- If we **fail to reject H₀**, it means the independent variables **do not significantly distinguish** between the groups.
-- If we **reject H₀**, it means the model can be used to **classify observations** into groups better than chance.
-
----
-
----
 
 ### Evaluating a Discriminant Analysis
 

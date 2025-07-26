@@ -64,21 +64,36 @@ To use Discriminant Analysis effectively and interpret results correctly, certai
 
 ---
 
+## Hypothesis in Discriminant Analysis (DA)
 
+### **Null Hypothesis (H₀)**:
+> The group means of a set of independent variables for two or more groups are **equal**.  
+(There is **no significant difference** between the groups based on the independent variables.)
 
+Mathematically:
 
-## Use of Discriminant Analysis in Research
+$$H_0: \mu_1 = \mu_2 = \dots = \mu_k$$
 
-During a study, researchers often encounter critical questions such as:
+Where $\mu_k $ is the mean vector of the independent variables for group $k$.
 
-- **Are the groups different?**
-- **On what variables are the groups most different?**
-- **Can we predict which group a person belongs to based on measurable variables?**
+---
 
-Discriminant Analysis is a statistical tool that helps answer these questions effectively.
+### **Alternative Hypothesis (H₁)**:
+> The group means are **not equal**.  
+At least one group is significantly different from the others in terms of the independent variables.
 
+\[
+H_1: \mu_i \ne \mu_j \quad \text{for some } i \ne j
+\]
 
+---
 
+## 🧠 What It Means
+
+- If we **fail to reject H₀**, it means the independent variables **do not significantly distinguish** between the groups.
+- If we **reject H₀**, it means the model can be used to **classify observations** into groups better than chance.
+
+---
 
 ---
 

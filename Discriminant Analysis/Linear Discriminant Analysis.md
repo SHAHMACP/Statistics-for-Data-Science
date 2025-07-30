@@ -53,6 +53,7 @@ The goal of an LDA algorithm is to find the **best linear combination** that giv
 
 1. **Quadratic Discriminant Analysis (QDA)**:  
    Allows each class to have its own estimate of variance.
+    <img width="266" height="178" alt="image" src="https://github.com/user-attachments/assets/2db3d69d-5586-48c5-9c40-622d2d4fbf20" />
 
 2. **Regularized Discriminant Analysis (RDA)**:  
    Adds regularization to manage small sample sizes and high-dimensional data.

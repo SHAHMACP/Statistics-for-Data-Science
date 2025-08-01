@@ -101,7 +101,7 @@ $$
 
 ### For $C_1$:
 
-Compute $(x - \mu_1)(x - \mu_1)^T$ for each $x$ in $C_1$ and then find the average. 
+Compute $(x - \mu_1)$ for each $x$ in $C_1$. 
 
 - For $(4,1)$: $x_1 - \mu_1 =(4,1)-(3,3.6)= (1, -2.6)$
 - For $(2,4)$: $x_2 - \mu_1 =(2,4)-(3,3.6)= (-1, 0.4)$

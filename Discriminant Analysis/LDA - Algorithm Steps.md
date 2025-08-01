@@ -101,49 +101,105 @@ $$
 
 ### For $C_1$:
 
-Compute $(x - \mu_1)(x - \mu_1)^T$ for each $x$ in $C_1$. 
+Compute $(x - \mu_1)(x - \mu_1)^T$ for each $x$ in $C_1$ and then find the average. 
 
-- For $(4,1)$:
-
-$$x_1 - \mu_1 =(4,1)-(3,3.6)= (1, -2.6)$$
-
-$$
-(x - \mu_1)(x - \mu_1)^T= 
-\begin{bmatrix}1 \\
--2.6 \end{bmatrix} 
- \begin{bmatrix}1 & -2.6 \end{bmatrix}=
-\begin{bmatrix}
-1 & -2.6 \\
--2.6 & 6.76
-\end{bmatrix}
-$$
-
-- For $(2,4)$:
-
-$$x_2 - \mu_1 =(2,4)-(3,3.6)= (-1, 0.4)$$
-
-$$
-(x - \mu_1)(x - \mu_1)^T= 
-\begin{bmatrix}-1 \\
-0.4 \end{bmatrix} 
- \begin{bmatrix}-1 & 0.4 \end{bmatrix}=
-\begin{bmatrix}
--1 & -0.4 \\
--0.4 & 0.16
-\end{bmatrix}
-$$
-
-
+- For $(4,1)$: $x_1 - \mu_1 =(4,1)-(3,3.6)= (1, -2.6)$
+- For $(2,4)$: $x_2 - \mu_1 =(2,4)-(3,3.6)= (-1, 0.4)$
+- For $(2,3)$: $x_3 - \mu_1 =(2,3)-(3,3.6)= (-1, -0.6)$
+- For $(3,6)$: $x_4 - \mu_1 =(3,6)-(3,3.6)= (0, 2.4)$
+- For $(4,4)$: $x_5 - \mu_1 =(4,4)-(3,3.6)= (1, 0.4)$
 
 Then:
 
 $$
-S_1 = =
-\begin{bmatrix}
+S_1 =\sum_{x \in C_i} (x - \mu_i)(x - \mu_i)^T = \begin{bmatrix}1 \\
+-2.6 \end{bmatrix} 
+ \begin{bmatrix}1 & -2.6 \end{bmatrix} + \begin{bmatrix}-1 \\
+0.4 \end{bmatrix} 
+ \begin{bmatrix}-1 & 0.4 \end{bmatrix} + \begin{bmatrix}-1 \\
+-0.6 \end{bmatrix} 
+ \begin{bmatrix}-1 & -0.6 \end{bmatrix}+ \begin{bmatrix} 0 \\
+2.4 \end{bmatrix} 
+ \begin{bmatrix}0 & 2.4 \end{bmatrix}+\begin{bmatrix}1 \\
+0.4 \end{bmatrix} 
+ \begin{bmatrix}1 & 0.4 \end{bmatrix} = \begin{bmatrix}
+1 & -2.6 \\
+-2.6 & 6.76
+\end{bmatrix} + \begin{bmatrix}
+-1 & -0.4 \\
+-0.4 & 0.16
+\end{bmatrix} + \begin{bmatrix}
+1 & 0.6 \\
+0.6 & 0.36
+\end{bmatrix} + \begin{bmatrix}
+0 & 0 \\
+0 & 5.76
+\end{bmatrix} + \begin{bmatrix}
+1 & 0.4 \\
+0.4 & 0.16
+\end{bmatrix}
+=\begin{bmatrix}
+4 & -2 \\
+-2 & 13.2
+\end{bmatrix}
+$$
+
+
+$$
+\begin{align*}
+S_1 &= \sum_{x \in C_i} (x - \mu_i)(x - \mu_i)^T \\
+&= 
+\begin{bmatrix} 1 \\ -2.6 \end{bmatrix} 
+\begin{bmatrix} 1 & -2.6 \end{bmatrix}
++ 
+\begin{bmatrix} -1 \\ 0.4 \end{bmatrix} 
+\begin{bmatrix} -1 & 0.4 \end{bmatrix}
++ 
+\begin{bmatrix} -1 \\ -0.6 \end{bmatrix} 
+\begin{bmatrix} -1 & -0.6 \end{bmatrix} \\
+&\quad + 
+\begin{bmatrix} 0 \\ 2.4 \end{bmatrix} 
+\begin{bmatrix} 0 & 2.4 \end{bmatrix}
++ 
+\begin{bmatrix} 1 \\ 0.4 \end{bmatrix} 
+\begin{bmatrix} 1 & 0.4 \end{bmatrix} \\
+&= 
+\begin{bmatrix} 1 & -2.6 \\ -2.6 & 6.76 \end{bmatrix}
++ 
+\begin{bmatrix} 1 & -0.4 \\ -0.4 & 0.16 \end{bmatrix}
++ 
+\begin{bmatrix} 1 & 0.6 \\ 0.6 & 0.36 \end{bmatrix}
++ 
+\begin{bmatrix} 0 & 0 \\ 0 & 5.76 \end{bmatrix}
++ 
+\begin{bmatrix} 1 & 0.4 \\ 0.4 & 0.16 \end{bmatrix} \\
+&= 
+\begin{bmatrix} 4 & -2 \\ -2 & 13.2 \end{bmatrix}
+\end{align*}
+$$
+
+
+$$(x - \mu_1)(x - \mu_1)^T= 
+= \begin{bmatrix}
 0.8 & -0.4 \\
 -0.4 & 2.64
 \end{bmatrix}
+
 $$
+
+
+
+
+
+$$
+(x - \mu_1)(x - \mu_1)^T= 
+=
+
+$$
+
+
+
+
 
 ### For $C_2$:
 

@@ -111,8 +111,12 @@ Compute $(x - \mu_1)(x - \mu_1)^T$ for each $x$ in $C_1$ and then find the avera
 
 Then:
 
-$$
-S_1 =\sum_{x \in C_i} (x - \mu_i)(x - \mu_i)^T = \begin{bmatrix}1 \\
+$$\begin{align*}
+S_1 
+&=
+\frac{1}{n} \sum_{x \in C_i} (x - \mu_i)(x - \mu_i)^T \\
+&=
+\frac{1}{5}( \begin{bmatrix}1 \\
 -2.6 \end{bmatrix} 
  \begin{bmatrix}1 & -2.6 \end{bmatrix} + \begin{bmatrix}-1 \\
 0.4 \end{bmatrix} 
@@ -122,7 +126,9 @@ S_1 =\sum_{x \in C_i} (x - \mu_i)(x - \mu_i)^T = \begin{bmatrix}1 \\
 2.4 \end{bmatrix} 
  \begin{bmatrix}0 & 2.4 \end{bmatrix}+\begin{bmatrix}1 \\
 0.4 \end{bmatrix} 
- \begin{bmatrix}1 & 0.4 \end{bmatrix} = \begin{bmatrix}
+ \begin{bmatrix}1 & 0.4 \end{bmatrix}) \\
+ &=
+\frac{1}{5}( \begin{bmatrix}
 1 & -2.6 \\
 -2.6 & 6.76
 \end{bmatrix} + \begin{bmatrix}
@@ -137,73 +143,22 @@ S_1 =\sum_{x \in C_i} (x - \mu_i)(x - \mu_i)^T = \begin{bmatrix}1 \\
 \end{bmatrix} + \begin{bmatrix}
 1 & 0.4 \\
 0.4 & 0.16
-\end{bmatrix}
-=\begin{bmatrix}
+\end{bmatrix}) \\
+&=
+\frac{1}{5}(\begin{bmatrix}
 4 & -2 \\
 -2 & 13.2
-\end{bmatrix}
-$$
-
-
-$$
-\begin{align*}
-S_1 &= \sum_{x \in C_i} (x - \mu_i)(x - \mu_i)^T \\
-&= 
-\begin{bmatrix} 1 \\ -2.6 \end{bmatrix} 
-\begin{bmatrix} 1 & -2.6 \end{bmatrix}
-+ 
-\begin{bmatrix} -1 \\ 0.4 \end{bmatrix} 
-\begin{bmatrix} -1 & 0.4 \end{bmatrix}
-+ 
-\begin{bmatrix} -1 \\ -0.6 \end{bmatrix} 
-\begin{bmatrix} -1 & -0.6 \end{bmatrix} \\
-&\quad + 
-\begin{bmatrix} 0 \\ 2.4 \end{bmatrix} 
-\begin{bmatrix} 0 & 2.4 \end{bmatrix}
-+ 
-\begin{bmatrix} 1 \\ 0.4 \end{bmatrix} 
-\begin{bmatrix} 1 & 0.4 \end{bmatrix} \\
-&= 
-\begin{bmatrix} 1 & -2.6 \\ -2.6 & 6.76 \end{bmatrix}
-+ 
-\begin{bmatrix} 1 & -0.4 \\ -0.4 & 0.16 \end{bmatrix}
-+ 
-\begin{bmatrix} 1 & 0.6 \\ 0.6 & 0.36 \end{bmatrix}
-+ 
-\begin{bmatrix} 0 & 0 \\ 0 & 5.76 \end{bmatrix}
-+ 
-\begin{bmatrix} 1 & 0.4 \\ 0.4 & 0.16 \end{bmatrix} \\
-&= 
-\begin{bmatrix} 4 & -2 \\ -2 & 13.2 \end{bmatrix}
-\end{align*}
-$$
-
-
-$$(x - \mu_1)(x - \mu_1)^T= 
-= \begin{bmatrix}
+\end{bmatrix}) \\
+&=
+\begin{bmatrix}
 0.8 & -0.4 \\
 -0.4 & 2.64
-\end{bmatrix}
-
-$$
-
-
-
-
-
-$$
-(x - \mu_1)(x - \mu_1)^T= 
-=
-
-$$
-
-
+\end{bmatrix} \\
+\end{align*}$$
 
 
 
 ### For $C_2$:
-
-(Same process as above.)
 
 $$
 S_2 =

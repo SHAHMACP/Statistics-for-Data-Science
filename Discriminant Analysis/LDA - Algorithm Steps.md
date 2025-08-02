@@ -109,6 +109,8 @@ Compute $(x - \mu_1)$ for each $x$ in $C_1$.
 - For $(3,6)$: $x_4 - \mu_1 =(3,6)-(3,3.6)= (0, 2.4)$
 - For $(4,4)$: $x_5 - \mu_1 =(4,4)-(3,3.6)= (1, 0.4)$
 
+<img width="489" height="385" alt="image" src="https://github.com/user-attachments/assets/d3b628c0-3fed-4132-b21b-db9f87f582c1" />
+
 Then:
 
 $$\begin{align*}

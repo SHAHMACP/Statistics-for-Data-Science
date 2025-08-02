@@ -169,6 +169,8 @@ Compute $(x - \mu_2)$ for each $x$ in $C_2$.
 - For $(9,5)$: $x_3 - \mu_2 =(9,5)-(8.4,\ 7.6)= (0.6, -2.6)$
 - For $(8,7)$: $x_4 - \mu_2 =(8,7)-(8.4,\ 7.6)= (-0.4, -0.6)$
 - For $(10,8)$: $x_5 - \mu_2 =(10,8)-(8.4,\ 7.6)= (1.6, 0.4)$
+<img width="484" height="390" alt="image" src="https://github.com/user-attachments/assets/dbc8a616-96f1-4ea2-a548-d915cdc60015" />
+
 
 Then:
 

@@ -169,6 +169,7 @@ Compute $(x - \mu_2)$ for each $x$ in $C_2$.
 - For $(9,5)$: $x_3 - \mu_2 =(9,5)-(8.4,\ 7.6)= (0.6, -2.6)$
 - For $(8,7)$: $x_4 - \mu_2 =(8,7)-(8.4,\ 7.6)= (-0.4, -0.6)$
 - For $(10,8)$: $x_5 - \mu_2 =(10,8)-(8.4,\ 7.6)= (1.6, 0.4)$
+  
 <img width="484" height="390" alt="image" src="https://github.com/user-attachments/assets/dbc8a616-96f1-4ea2-a548-d915cdc60015" />
 
 
@@ -241,6 +242,7 @@ $$
 ## ✅ Step 3: Compute Between-Class Scatter Matrix $S_B$
 
 $$\mu_1 - \mu_2 = (3,3.6) - (8.4,\ 7.6)= (-5.4 ,-4.0)$$
+
 <img width="461" height="392" alt="image" src="https://github.com/user-attachments/assets/77e60f3a-8667-4dd3-8885-83c9660bce61" />
 
 Then:
@@ -274,11 +276,14 @@ $$
 Let $S_W^{-1}$ be:
 
 $$
-S_W^{-1} =
-\frac{1}{\det(S_W)} \cdot
+S_W^{-1} = \frac{1}{\det(S_W)} \cdot adj(A) = 
+\frac{1}{(2.64 \cdot 5.28) - (-0.44)^2} \cdot
 \begin{bmatrix}
 5.28 & 0.44 \\
 0.44 & 2.64
+\end{bmatrix} = \begin{bmatrix}
+0.384 & 0.032 \\
+0.032 & 0.192
 \end{bmatrix}
 $$
 
@@ -312,6 +317,17 @@ $$
 $$
 \left|
 \begin{bmatrix}
+11.89 & 8.81 \\
+5.08 & 3.76
+\end{bmatrix} -  \lambda  \cdot \begin{bmatrix}1 & 0 \\
+0 & 1
+\end{bmatrix}
+\right| = 0
+$$
+
+$$
+\left|
+\begin{bmatrix}
 11.89 - \lambda & 8.81 \\
 5.08 & 3.76 - \lambda
 \end{bmatrix}
@@ -326,25 +342,43 @@ $$
 
 Solve:
 
+$$ 44.7064 - 11.89\lambda- 3.76\lambda + \lambda^2 -44.7548 = 0$$
+
 $$
-\lambda^2 - 15.65\lambda + 0.04 = 0
+\lambda^2 - 15.65\lambda + 0.0484 = 0
 $$
 
 $$
-\Rightarrow \lambda = 15.65
+\Rightarrow \lambda = \frac{15.65 \pm \sqrt{(-15.65)^2 - 4 \cdot 1 \cdot  0.0484}}{2 \cdot 1} = 15.65, 0.0031
 $$
 
 ---
 
 ## ✅ Step 6: Find Eigenvector $v$
 
-Solve:
+For the best separation, we calculate the eigenvector corresponding to the highest eigenvalue of the scatter matrices.
+
+So $\lambda =15.65$
+
+Now Solve:
 
 $$
 (S_W^{-1} S_B - \lambda I)v = 0
 $$
 
 Substitute and solve:
+$$
+\begin{bmatrix}
+11.89 - 15.65 & 8.81 \\
+5.08 & 3.76 - 15.65
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+v_1 \\
+v_2
+\end{bmatrix}
+= 0
+$$
 
 $$
 \begin{bmatrix}
@@ -377,14 +411,12 @@ $$
 
 Normalize:
 
-$$
-\|v\| = \sqrt{(2.34)^2 + 1^2} = 2.54
+$$\|v\| = \sqrt{(2.34)^2 + 1^2} = 2.54
 \Rightarrow v =
 \begin{bmatrix}
 \frac{2.34}{2.54} \\
 \frac{1}{2.54}
-\end{bmatrix}
-=
+\end{bmatrix}=
 \begin{bmatrix}
 0.92 \\
 0.39

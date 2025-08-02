@@ -132,7 +132,7 @@ S_1
 1 & -2.6 \\
 -2.6 & 6.76
 \end{bmatrix} + \begin{bmatrix}
--1 & -0.4 \\
+1 & -0.4 \\
 -0.4 & 0.16
 \end{bmatrix} + \begin{bmatrix}
 1 & 0.6 \\
@@ -160,18 +160,72 @@ S_1
 
 ### For $C_2$:
 
-$$
-S_2 =
+Compute $(x - \mu_2)$ for each $x$ in $C_2$. 
+
+- For $(9,10)$: $x_1 - \mu_2 =(9,10)-(8.4,\ 7.6)= (0.6, 2.4)$
+- For $(6,8)$: $x_2 - \mu_2 =(6,8)-(8.4,\ 7.6)= (-2.4, 0.4)$
+- For $(9,5)$: $x_3 - \mu_2 =(9,5)-(8.4,\ 7.6)= (0.6, -2.6)$
+- For $(8,7)$: $x_4 - \mu_2 =(8,7)-(8.4,\ 7.6)= (-0.4, -0.6)$
+- For $(10,8)$: $x_5 - \mu_2 =(10,8)-(8.4,\ 7.6)= (1.6, 0.4)$
+
+Then:
+
+$$\begin{align*}
+S_1 
+&=
+\frac{1}{n} \sum_{x \in C_i} (x - \mu_i)(x - \mu_i)^T \\
+&=
+\frac{1}{5}( \begin{bmatrix}0.6 \\
+2.4 \end{bmatrix} 
+ \begin{bmatrix}0.6 & 2.4  \end{bmatrix} + \begin{bmatrix}-2.4 \\
+0.4 \end{bmatrix} 
+ \begin{bmatrix}-2.4 & 0.4 \end{bmatrix} + \begin{bmatrix}0.6 \\
+-2.6 \end{bmatrix} 
+ \begin{bmatrix}0.6 & -2.6 \end{bmatrix}+ \begin{bmatrix} -0.4 \\
+ -0.6 \end{bmatrix} 
+ \begin{bmatrix}-0.4 &  -0.6 \end{bmatrix}+\begin{bmatrix}1.6 \\
+0.4 \end{bmatrix} 
+ \begin{bmatrix}1.6 & 0.4 \end{bmatrix}) \\
+ &=
+\frac{1}{5}( \begin{bmatrix}
+0.36 & 1.44 \\
+1.44 & 5.76
+\end{bmatrix} + \begin{bmatrix}
+5.76 & -0.96 \\
+-0.96 & 0.16
+\end{bmatrix} + \begin{bmatrix}
+0.36 & -1.56 \\
+-1.56 & 6.76
+\end{bmatrix} + \begin{bmatrix}
+0.16 & 0.24 \\
+0.24 & 0.36
+\end{bmatrix} + \begin{bmatrix}
+2.56 & 0.64 \\
+0.64 & 0.16
+\end{bmatrix}) \\
+&=
+\frac{1}{5}(\begin{bmatrix}
+9.2 & -0.2 \\
+-0.2 & 13.2
+\end{bmatrix}) \\
+&=
 \begin{bmatrix}
 1.84 & -0.04 \\
 -0.04 & 2.64
-\end{bmatrix}
-$$
+\end{bmatrix} \\
+\end{align*}$$
+
 
 ### Total Within-Class Scatter Matrix:
 
 $$
-S_W = S_1 + S_2 =
+S_W = S_1 + S_2 = \begin{bmatrix}
+0.8 & -0.4 \\
+-0.4 & 2.64
+\end{bmatrix} + \begin{bmatrix}
+1.84 & -0.04 \\
+-0.04 & 2.64
+\end{bmatrix} =
 \begin{bmatrix}
 2.64 & -0.44 \\
 -0.44 & 5.28
@@ -182,23 +236,14 @@ $$
 
 ## ✅ Step 3: Compute Between-Class Scatter Matrix $S_B$
 
-$$
-\mu_1 - \mu_2 =
-\begin{bmatrix}
-3.0 - 8.4 \\
-3.6 - 7.6
-\end{bmatrix}
-=
-\begin{bmatrix}
--5.4 \\
--4.0
-\end{bmatrix}
-$$
+$$\mu_1 - \mu_2 = (3,3.6) - (8.4,\ 7.6)= (-5.4 ,-4.0)$$
 
 Then:
 
 $$
-S_B = (\mu_1 - \mu_2)(\mu_1 - \mu_2)^T =
+S_B = (\mu_1 - \mu_2)(\mu_1 - \mu_2)^T = \begin{bmatrix} -5.4 \\
+-4 \end{bmatrix} 
+ \begin{bmatrix} -5.4 & -4  \end{bmatrix} =
 \begin{bmatrix}
 29.16 & 21.6 \\
 21.6 & 16
@@ -209,7 +254,9 @@ $$
 
 ## ✅ Step 4: Compute $S_W^{-1} S_B$
 
-First compute inverse of $S_W$:
+The goal is to maximize the ratio of the between-class scatter to the within-class scatter: So maximise $$J=\frac{S_B}{S_W} = S_W^{-1} S_B$$.
+
+First, compute the inverse of $S_W$:
 
 $$
 S_W =
@@ -232,9 +279,7 @@ $$
 
 Then:
 
-$$
-S_W^{-1} S_B =
-\begin{bmatrix}
+$$S_W^{-1} S_B =\begin{bmatrix}
 0.384 & 0.032 \\
 0.032 & 0.192
 \end{bmatrix}
@@ -242,8 +287,7 @@ S_W^{-1} S_B =
 \begin{bmatrix}
 29.16 & 21.6 \\
 21.6 & 16
-\end{bmatrix}
-=
+\end{bmatrix}=
 \begin{bmatrix}
 11.89 & 8.81 \\
 5.08 & 3.76

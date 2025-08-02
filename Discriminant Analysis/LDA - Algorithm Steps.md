@@ -89,6 +89,8 @@ $\mu_2 = \left( \frac{9+6+9+8+10}{5}, \frac{10+8+5+7+8}{5} \right) = (8.4,\ 7.6)
 
 <img width="400" height="300" alt="image" src="https://github.com/user-attachments/assets/0e2e28ac-f405-45f8-98e1-b163f65b8e1b" />
 
+These are your cluster centroids — the "center" of each group.
+
 ---
 
 ## ✅ Step 2: Compute Within-Class Scatter Matrix $S_W$
@@ -352,6 +354,7 @@ $$
 \Rightarrow \lambda = \frac{15.65 \pm \sqrt{(-15.65)^2 - 4 \cdot 1 \cdot  0.0484}}{2 \cdot 1} = 15.65, 0.0031
 $$
 
+This is the number that tells how much separation or discrimination power the direction (eigenvector) gives.
 ---
 
 ## ✅ Step 6: Find Eigenvector $v$
@@ -423,6 +426,7 @@ $$\|v\| = \sqrt{(2.34)^2 + 1^2} = 2.54
 \end{bmatrix}
 $$
 
+This is the direction that maximally separates the two clusters (centroids).
 ---
 
 ## ✅ Step 7: Project Data
@@ -430,7 +434,23 @@ $$
 Each $x$ is projected onto new axis:
 
 $$
-y = v^T x = [0.92,\ 0.39] \cdot x
+\text{Discriminant Score} =y = v^T x = [0.92,\ 0.39] \cdot x = 0.92 \cdot x_1 + 0.39 \cdot x_2
+$$
+
+
+​To classify or visualize, we **project each data point onto the eigenvector** and find the **the discriminant score**
+
+For example,
+- For a point in \$C\_1\$, say \$(4,1)\$:
+
+$$
+y = 0.92 \cdot 4 + 0.39 \cdot 1 = 3.68 + 0.39 = 4.07
+$$
+
+- For a point in \$C\_2\$, say \$(9,10)\$:
+
+$$
+y = 0.92 \cdot 9 + 0.39 \cdot 10 = 8.28 + 3.9 = 12.18
 $$
 
 ---
@@ -453,4 +473,8 @@ $$
 
 - LDA Theory: [Wikipedia](https://en.wikipedia.org/wiki/Linear_discriminant_analysis)
 - Python Tutorial: [GeeksforGeeks LDA](https://www.geeksforgeeks.org/machine-learning/ml-linear-discriminant-analysis/)
+
+
+
+
 

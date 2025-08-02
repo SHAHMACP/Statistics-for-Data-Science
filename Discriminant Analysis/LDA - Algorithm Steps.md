@@ -56,7 +56,7 @@ Given two classes:
 
 **Class $C_1$:**
 
-$$C_1 = \{(4,1), (2,4), (2,3), (3,6), (4,4)\} =  
+$$C_1 = \{\{(4,1), (2,4), (2,3), (3,6), (4,4)\}\} =  
 \begin{bmatrix}
 4&1\\
 2& 4\\
@@ -427,6 +427,8 @@ $$\|v\| = \sqrt{(2.34)^2 + 1^2} = 2.54
 $$
 
 This is the direction that maximally separates the two clusters (centroids).
+<img width="580" height="519" alt="image" src="https://github.com/user-attachments/assets/614b647c-97a4-4833-96a4-cb4ded9f3eab" />
+
 ---
 
 ## ✅ Step 7: Project Data
@@ -438,7 +440,7 @@ $$
 $$
 
 
-​To classify or visualize, we **project each data point onto the eigenvector** and find the **the discriminant score**
+​To classify or visualize, we **project each data point onto the eigenvector** and find the **discriminant score**
 
 For example,
 - For a point in \$C\_1\$, say \$(4,1)\$:

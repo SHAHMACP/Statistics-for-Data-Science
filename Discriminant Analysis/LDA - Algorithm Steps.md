@@ -355,6 +355,7 @@ $$
 $$
 
 This is the number that tells how much separation or discrimination power the direction (eigenvector) gives.
+
 ---
 
 ## ✅ Step 6: Find Eigenvector $v$

@@ -241,6 +241,7 @@ $$
 ## ✅ Step 3: Compute Between-Class Scatter Matrix $S_B$
 
 $$\mu_1 - \mu_2 = (3,3.6) - (8.4,\ 7.6)= (-5.4 ,-4.0)$$
+<img width="461" height="392" alt="image" src="https://github.com/user-attachments/assets/77e60f3a-8667-4dd3-8885-83c9660bce61" />
 
 Then:
 

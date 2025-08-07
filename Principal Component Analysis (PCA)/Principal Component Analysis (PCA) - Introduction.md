@@ -21,13 +21,20 @@
 Dimensionality reduction is a crucial preprocessing step in data science and machine learning, especially when working with high-dimensional data. 
 It refers to the process of reducing the number of input variables or features in a dataset while retaining as much relevant information as possible.
 
----
 
 #### Curse of Dimensionality
 
 > The **curse of dimensionality** refers to various phenomena that arise when analyzing data in high-dimensional spaces. As the number of features increases, data becomes **sparse**, making it difficult to find meaningful patterns, **Model performance** can degrade due to overfitting and increased computational cost, and **Visualization becomes impossible** beyond 3 dimensions.
 
 Absolutely! Here’s another **simple, relatable example** that makes **PCA** easier to understand for students and readers of your GitHub repo. It complements your “height and weight” example, and can be used as a second introduction or analogy.
+
+#### Feature Selection vs Feature Extraction
+
+| Feature Selection                                             | Feature Extraction                                           |
+| ------------------------------------------------------------- | ------------------------------------------------------------ |
+| Selecting a **subset** of the original features               | Creating **new features** from combinations of original ones |
+| Original meaning of features is preserved                     | New features may not have intuitive meaning                  |
+| Examples: Removing low variance or highly correlated features | Examples: PCA, LDA                             |
 
 ---
 
@@ -56,16 +63,35 @@ Instead of choosing one feature and discarding the other, PCA helps you:
 * When you project the data onto this new axis, you get a **1D representation** that still captures most of the differences among the fruits <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/d157ed16-d883-46dd-883d-b8d934d402a1" />
 
 
+
 ---
 
-#### Feature Selection vs Feature Extraction**
+## Principal Component
 
-| Feature Selection                                             | Feature Extraction                                           |
-| ------------------------------------------------------------- | ------------------------------------------------------------ |
-| Selecting a **subset** of the original features               | Creating **new features** from combinations of original ones |
-| Original meaning of features is preserved                     | New features may not have intuitive meaning                  |
-| Examples: Removing low variance or highly correlated features | Examples: PCA, LDA                             |
+A **Principal Component (PC)** is a **new feature** (or axis/direction) formed by a **linear combination of original features**, such that:
 
+* It **captures the maximum possible variance** in the data.
+* Each component is **uncorrelated** (orthogonal) to the previous ones.
+* It’s **ordered**: PC1 captures the most variance, PC2 the next most, and so on.
+
+
+> A **Principal Component** is like a **new perspective** from which your data makes the most sense — where the differences between the points are most noticeable.
+
+
+### Geometric Intuition:
+
+Imagine a cloud of points in 2D. The direction along which these points are **most spread out** is the **first principal component (PC1)**. The **second principal component (PC2)** is the direction that is **perpendicular** to PC1 captures the **next highest variance** in the data. These new axes (PC1, PC2, ...) form a new **coordinate system** for your data.
+
+
+
+### Properties of Principal Components:
+
+| Property   | Description                                           |
+| ---------- | ----------------------------------------------------- |
+| Orthogonal | All PCs are at 90° to each other (uncorrelated)       |
+| Ranked     | PC1 > PC2 > PC3 … in terms of variance captured       |
+| Linear     | Each PC is a linear combination of original variables |
+| Compact    | Often, a few PCs explain most of the variance         |
 
 ---
 

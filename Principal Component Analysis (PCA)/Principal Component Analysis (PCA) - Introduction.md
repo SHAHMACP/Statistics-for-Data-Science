@@ -95,5 +95,67 @@ Imagine a cloud of points in 2D. The direction along which these points are **mo
 
 ---
 
+### Advantages of PCA
+
+| Advantage                       | Description                                                                                      |
+| ------------------------------- | ------------------------------------------------------------------------------------------------ |
+|  **Dimensionality Reduction** | Helps reduce the number of input features while preserving important information.                |
+|  **Faster Computation**       | With fewer features, machine learning models train and run faster.                               |
+|  **Noise Reduction**          | Eliminates irrelevant or redundant features that may cause overfitting.                          |
+|  **Uncorrelated Features**    | Produces orthogonal (uncorrelated) principal components, useful in regression and modeling.      |
+|  **Data Visualization**       | Allows high-dimensional data to be visualized in 2D or 3D by using the top principal components. |
+
+---
+
+###  Disadvantages of PCA
+
+| Disadvantage                    | Description                                                                                        |
+| ------------------------------- | -------------------------------------------------------------------------------------------------- |
+|  **Loss of Interpretability** | New features (principal components) are linear combinations — they don’t carry real-world meaning. |
+|  **Sensitive to Scaling**     | Must standardize or normalize data before PCA; otherwise, results can be misleading.               |
+|  **Assumes Linearity**        | Cannot capture non-linear patterns in data (unlike techniques like t-SNE or Kernel PCA).           |
+|  **Affected by Outliers**     | Outliers can distort the direction of principal components.                                        |
+|  **Information Loss**         | If you drop too many components, some important information may be lost.                           |
+
+---
+
+### Properties of PCA
+
+| Property                     | Description                                                                   |
+| ---------------------------- | ----------------------------------------------------------------------------- |
+| **Orthogonality**         | All principal components are mutually orthogonal (uncorrelated).              |
+|  **Ordered Variance**      | PC1 > PC2 > PC3 in terms of the variance they capture.                        |
+|  **Linear Transformation** | PCA projects data linearly onto a new set of axes.                            |
+| **Variance-Based**        | Selection of principal components is based on how much variance they explain. |
+| **Basis Vectors**         | The principal components form a new basis for the data space.                 |
+
+---
+
+### Applications of PCA
+
+| Field                    | Application                                                                          |
+| ------------------------ | ------------------------------------------------------------------------------------ |
+|  **Image Compression** | Reduce the number of pixels while retaining important visual information.            |
+|  **Genomics**          | Reduce thousands of gene features to key principal components for disease detection. |
+|  **Neuroscience**      | Simplify EEG/fMRI data for pattern analysis and brain activity detection.            |
+|  **Finance**           | Reduce correlated stock market indicators into a few principal trends.               |
+|  **Medical Diagnosis** | Simplify large diagnostic datasets (e.g., cancer, diabetes) for prediction.          |
+|  **Signal Processing** | Remove noise and detect meaningful signals in audio and sensor data.                 |
+|  **Chemometrics**      | Analyze chemical mixtures or reactions using spectrometry data.                      |
+
+---
+
+### Limitations of PCA
+
+| Limitation                          | Description                                                                         |
+| ----------------------------------- | ----------------------------------------------------------------------------------- |
+|  **Linear Only**                  | Cannot model nonlinear patterns — Kernel PCA or t-SNE are better for that.          |
+|  **Feature Interpretability**     | Principal components often lack clear interpretation or naming.                     |
+|  **Sensitive to Feature Scaling** | Without normalization, features with larger magnitudes dominate PCA.                |
+|  **No Class Awareness**           | PCA is unsupervised — it doesn’t consider target/output labels.                     |
+|  **Can Mislead**                  | If variance doesn’t align with meaningful structure, PCA may give poor projections. |
+
+---
+
 
 

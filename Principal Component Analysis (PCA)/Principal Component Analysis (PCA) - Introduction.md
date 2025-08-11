@@ -150,7 +150,8 @@ Imagine a cloud of points in 2D. The direction along which these points are **mo
 |  **Correlation between features**     | PCA assumes some correlation between the features. If not, PCA will be unable to determine the principal component.                     |
 |  **Sensitive to Feature Scaling** | Without standardization, features with larger magnitudes dominate PCA (For a house price prediction, house size might range from 1,000 to 10,000 square feet and number of bedrooms might range from 1 to 5. Without scaling, a machine learning model might give far more importance to the difference of 100 square feet than to the difference of one bedroom, even though the number of bedrooms is often a more critical factor in determining a house's value or classification. ).            |
 |  **No Class Awareness**           | PCA is unsupervised — it doesn’t consider target/output labels.                     |
-|  **Can Mislead**                  | If variance doesn’t align with meaningful structure, PCA may give poor projections. |
+|  **Not robust to outliers**                  | The algorithm will be biased in datasets with strong outliers. Should remove outliers before PCA. |
+|  **No missing values**                  | Technical implementation often assumes no missing values present in the feature sets. |
 
 ---
 

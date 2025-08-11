@@ -21,34 +21,133 @@ It finds new directions (**principal components**) that capture the **maximum va
 ---
 ## PCA Algorithm – Step-by-Step
 
-Given a dataset with `n` samples and `d` features:
 
-### **Step 1: Standardize the Data**
-- PCA is sensitive to feature scaling
-- Ensure each feature has mean 0 and variance 1.
-- Standardization formula: $z = \frac{x - \mu}{\sigma}$ where $\mu$ is the mean of the feature and $\sigma$ is standard deviation of the feature
+### **Step 1 – Prepare the Dataset**
 
+Let the dataset have:
 
-### **Step 2: Compute the Covariance Matrix**
-- The covariance matrix shows relationships between variables
-- Formula: $\text{Cov}(X) = \frac{1}{n-1} X^\top X$ where $X$ is the standardized data matrix
+* $n$ = number of features (variables)
+* $N$ = number of samples (observations)
 
-
-
-### **Step 3: Calculate Eigenvalues and Eigenvectors**
-- **Eigenvectors** → Directions of maximum variance (principal components)
-- **Eigenvalues** → Amount of variance captured in each direction
+| Feature | Sample 1 | Sample 2 | ... | Sample N |
+| ------- | -------- | -------- | --- | -------- |
+| $X_1$   | $X_{11}$ | $X_{12}$ | ... | $X_{1N}$ |
+| $X_2$   | $X_{21}$ | $X_{22}$ | ... | $X_{2N}$ |
+| ...     | ...      | ...      | ... | ...      |
+| $X_n$   | $X_{n1}$ | $X_{n2}$ | ... | $X_{nN}$ |
 
 
-### **Step 4: Sort Eigenvalues and Select Top k**
-- Arrange eigenvalues in **descending order**
-- Keep the top `k` eigenvectors (based on explained variance)
+### **Step 2 – Compute the Mean of Each Feature**
+
+The mean of the $i$-th variable is:
+
+$$
+\bar{X_i} = \frac{1}{N} \sum_{j=1}^{N} X_{ij}
+$$
+
+This mean will be used for centering the data.
 
 
-### **Step 5: Form the Projection Matrix**
-- Projection matrix $W$ is formed from selected eigenvectors: $W = [e_1, e_2, ..., e_k]$
+### **Step 3 – Compute the Covariance Matrix**
 
-### **Step 6: Transform the Data**
-- Project original data into new feature space: $X_{\text{reduced}} = X \times W$
+The covariance between features $X_i$ and $X_j$ is:
+
+$$
+\text{Cov}(X_i, X_j) = \frac{1}{N-1} \sum_{k=1}^N (X_{ik} - \bar{X_i}) (X_{jk} - \bar{X_j})
+$$
+
+The **covariance matrix $S$** is an $n \times n$ matrix:
+
+$$
+S = 
+\begin{bmatrix}
+\text{Cov}(X_1, X_1) & \text{Cov}(X_1, X_2) & \dots & \text{Cov}(X_1, X_n) \\
+\text{Cov}(X_2, X_1) & \text{Cov}(X_2, X_2) & \dots & \text{Cov}(X_2, X_n) \\
+\vdots & \vdots & \ddots & \vdots \\
+\text{Cov}(X_n, X_1) & \text{Cov}(X_n, X_2) & \dots & \text{Cov}(X_n, X_n)
+\end{bmatrix}
+$$
+
+
+### **Step 4 – Find Eigenvalues and Eigenvectors of the Covariance Matrix**
+
+To find **eigenvalues ($\lambda$)**:
+
+$$
+|S - \lambda I| = 0
+$$
+
+This gives $n$ roots:
+
+$$
+\lambda_1, \lambda_2, ..., \lambda_n
+$$
+
+where:
+
+$$
+\lambda_1 > \lambda_2 > ... > \lambda_n
+$$
+
+For each eigenvalue $\lambda$, solve:
+
+$$
+(S - \lambda I) U = 0
+$$
+
+where $U$ is the eigenvector corresponding to $\lambda$
+
+
+### **Step 5 – Normalize Eigenvectors**
+
+Each eigenvector is normalized to have unit length:
+
+$$
+e_i = \frac{u_i}{\|u_i\|}, \quad \|u_i\| = \sqrt{u_{i1}^2 + u_{i2}^2 + \dots + u_{in}^2}
+$$
+
+
+### **Step 6 – Select Principal Components**
+
+* The **first principal component** corresponds to the eigenvector with the **largest eigenvalue**.
+* The **second principal component** corresponds to the eigenvector with the second largest eigenvalue, and so on.
+
+
+### **Step 7 – Derive the New Dataset**
+
+Form a projection matrix from the top $k$ eigenvectors:
+
+$$
+W = [e_1, e_2, ..., e_k]
+$$
+
+Project the original centered dataset $X$ into the new reduced space:
+
+$$
+P_{ij} = e_i^T 
+\begin{bmatrix}
+X_{1j} - \bar{X_1} \\
+X_{2j} - \bar{X_2} \\
+\vdots \\
+X_{nj} - \bar{X_n}
+\end{bmatrix}
+$$
+
+The result is the **transformed dataset** with $k$ principal components.
 
 ---
+
+## 📊 PCA Algorithm Summary Table
+
+| Step | Action                          | Output                               |
+| ---- | ------------------------------- | ------------------------------------ |
+| 1    | Prepare dataset                 | Matrix $X$                           |
+| 2    | Compute mean of features        | Mean vector                          |
+| 3    | Compute covariance matrix       | Matrix $S$                           |
+| 4    | Find eigenvalues & eigenvectors | $\lambda_i$, $e_i$                   |
+| 5    | Normalize eigenvectors          | Unit vectors                         |
+| 6    | Select top $k$ PCs              | Projection matrix $W$                |
+| 7    | Project data                    | Reduced dataset $X_{\text{reduced}}$ |
+
+---
+

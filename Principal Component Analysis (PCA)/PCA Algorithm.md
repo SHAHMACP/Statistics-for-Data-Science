@@ -137,7 +137,7 @@ The result is the **transformed dataset** with $k$ principal components.
 
 ---
 
-## 📊 PCA Algorithm Summary Table
+## PCA Algorithm Summary Table
 
 | Step | Action                          | Output                               |
 | ---- | ------------------------------- | ------------------------------------ |

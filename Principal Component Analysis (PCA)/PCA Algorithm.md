@@ -1,3 +1,25 @@
+# The PCA algorithm
+
+
+
+## Common Terms in PCA Algorithm
+
+| Term                                          | Meaning                                                                                               |
+| --------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| **Feature / Variable**                        | An individual measurable property (e.g., height, weight, sweetness)                                   |
+| **Dimension**                                 | The number of features/ variables/ columns in a dataset (e.g., 2D = 2 features)                                           |
+| **Standardization / Normalization**           | Rescaling data so that each feature has mean = 0 and standard deviation = 1                           |
+| **Covariance**                                | A measure of how two variables change together (positive = increase together, negative = opposite)    |
+| **Correlation**                         | It signifies the strength and direction of the relationship between two variables.                                      |
+| **Covariance Matrix**                         | A square matrix showing covariance between each pair of features                                      |
+| **Eigenvalue**                                | Represents the amount of variance carried in the direction of a corresponding eigenvector             |
+| **Eigenvector**                               | A vector that defines the direction of a principal component                                          |
+| **Projection**                                | Mapping the original data onto the new principal component axes                                       |
+| **Orthogonal Vectors**                        | Vectors that are at 90° to each other; uncorrelated(Correlation=0)                                                   |
+
+---
+
+
 ## Mathematical Foundation
 
 Given a dataset with `n` samples and `d` features:
@@ -31,3 +53,7 @@ Given a dataset with `n` samples and `d` features:
 4. Choose top k eigenvectors based on eigenvalues
 5. Form a projection matrix W
 6. Project the original dataset: X_reduced = X × W
+
+
+* **PCA is sensitive to scale**, so always **standardize** your data before applying PCA.
+* **PCA is a linear technique**, so it works best when relationships between features are linear.

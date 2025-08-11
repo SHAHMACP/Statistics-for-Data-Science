@@ -1,5 +1,6 @@
 # The PCA algorithm
-
+Principal Component Analysis (PCA) is an **unsupervised linear transformation technique** used for **dimensionality reduction**.  
+It finds new directions (**principal components**) that capture the **maximum variance** in the data.
 
 
 ## Common Terms in PCA Algorithm
@@ -18,42 +19,36 @@
 | **Orthogonal Vectors**                        | Vectors that are at 90° to each other; uncorrelated(Correlation=0)                                                   |
 
 ---
-
-
-## Mathematical Foundation
+## PCA Algorithm – Step-by-Step
 
 Given a dataset with `n` samples and `d` features:
 
-1. **Standardize the data**  
-   Ensure each feature has mean = 0 and variance = 1.
+### **Step 1: Standardize the Data**
+- PCA is sensitive to feature scaling
+- Ensure each feature has mean 0 and variance 1.
+- Standardization formula: $z = \frac{x - \mu}{\sigma}$ where $\mu$ is the mean of the feature and $\sigma$ is standard deviation of the feature
 
-2. **Compute the Covariance Matrix**  
-   \[
-   \text{Cov}(X) = \frac{1}{n-1} X^\top X
-   \]
 
-3. **Compute Eigenvalues and Eigenvectors** of the covariance matrix  
-   - Eigenvectors → directions of maximum variance (principal components)  
-   - Eigenvalues → magnitude of variance in each direction
+### **Step 2: Compute the Covariance Matrix**
+- The covariance matrix shows relationships between variables
+- Formula: $\text{Cov}(X) = \frac{1}{n-1} X^\top X$ where $X$ is the standardized data matrix
 
-4. **Sort eigenvectors** by descending eigenvalues
 
-5. **Select top `k` components** (based on cumulative explained variance)
 
-6. **Project data** onto the new `k`-dimensional subspace
+### **Step 3: Calculate Eigenvalues and Eigenvectors**
+- **Eigenvectors** → Directions of maximum variance (principal components)
+- **Eigenvalues** → Amount of variance captured in each direction
+
+
+### **Step 4: Sort Eigenvalues and Select Top k**
+- Arrange eigenvalues in **descending order**
+- Keep the top `k` eigenvectors (based on explained variance)
+
+
+### **Step 5: Form the Projection Matrix**
+- Projection matrix $W$ is formed from selected eigenvectors: $W = [e_1, e_2, ..., e_k]$
+
+### **Step 6: Transform the Data**
+- Project original data into new feature space: $X_{\text{reduced}} = X \times W$
 
 ---
-
-## 🔢 PCA Algorithm (Step-by-Step)
-
-```text
-1. Normalize the dataset (zero mean, unit variance)
-2. Calculate the covariance matrix
-3. Calculate the eigenvalues and eigenvectors
-4. Choose top k eigenvectors based on eigenvalues
-5. Form a projection matrix W
-6. Project the original dataset: X_reduced = X × W
-
-
-* **PCA is sensitive to scale**, so always **standardize** your data before applying PCA.
-* **PCA is a linear technique**, so it works best when relationships between features are linear.

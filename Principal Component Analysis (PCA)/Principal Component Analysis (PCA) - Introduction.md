@@ -99,23 +99,19 @@ Imagine a cloud of points in 2D. The direction along which these points are **mo
 
 | Advantage                       | Description                                                                                      |
 | ------------------------------- | ------------------------------------------------------------------------------------------------ |
-|  **Dimensionality Reduction** | Helps reduce the number of input features while preserving important information.                |
-|  **Faster Computation**       | With fewer features, machine learning models train and run faster.                               |
+|  **Easy Computation**         | PCA is computationally easy to solve by computers.                |
+|  **Faster Computation**       | With fewer features, machine learning models train and run faster. It speeds up machine learning algorithms.|
 |  **Noise Reduction**          | Eliminates irrelevant or redundant features that may cause overfitting.                          |
-|  **Uncorrelated Features**    | Produces orthogonal (uncorrelated) principal components, useful in regression and modeling.      |
 |  **Data Visualization**       | Allows high-dimensional data to be visualized in 2D or 3D by using the top principal components. |
 
----
 
 ###  Disadvantages of PCA
 
 | Disadvantage                    | Description                                                                                        |
 | ------------------------------- | -------------------------------------------------------------------------------------------------- |
 |  **Loss of Interpretability** | New features (principal components) are linear combinations — they don’t carry real-world meaning. |
-|  **Sensitive to Scaling**     | Must standardize or normalize data before PCA; otherwise, results can be misleading.               |
 |  **Assumes Linearity**        | Cannot capture non-linear patterns in data (unlike techniques like t-SNE or Kernel PCA).           |
-|  **Affected by Outliers**     | Outliers can distort the direction of principal components.                                        |
-|  **Information Loss**         | If you drop too many components, some important information may be lost.                           |
+|  **The Trade-off between Information Loss and Dimensionality Reduction**| If you drop too many components, some important information may be lost. Balancing the trade-off between information loss and dimensionality reduction is unfortunately a necessary compromise that we have to make when using PCA.|
 
 ---
 
@@ -151,7 +147,8 @@ Imagine a cloud of points in 2D. The direction along which these points are **mo
 | ----------------------------------- | ----------------------------------------------------------------------------------- |
 |  **Linear Only**                  | Cannot model nonlinear patterns — Kernel PCA or t-SNE are better for that.          |
 |  **Feature Interpretability**     | Principal components often lack clear interpretation or naming.                     |
-|  **Sensitive to Feature Scaling** | Without normalization, features with larger magnitudes dominate PCA.                |
+|  **Correlation between features**     | PCA assumes some correlation between the features. If not, PCA will be unable to determine the principal component.                     |
+|  **Sensitive to Feature Scaling** | Without standardization, features with larger magnitudes dominate PCA (For a house price prediction, house size might range from 1,000 to 10,000 square feet and number of bedrooms might range from 1 to 5. Without scaling, a machine learning model might give far more importance to the difference of 100 square feet than to the difference of one bedroom, even though the number of bedrooms is often a more critical factor in determining a house's value or classification. ).            |
 |  **No Class Awareness**           | PCA is unsupervised — it doesn’t consider target/output labels.                     |
 |  **Can Mislead**                  | If variance doesn’t align with meaningful structure, PCA may give poor projections. |
 

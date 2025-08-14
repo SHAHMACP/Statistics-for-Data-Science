@@ -220,7 +220,7 @@ $$
 (We will use these centered values for covariance and projection.)
 
 
-## Step 4 — Covariance matrix (sample covariance, divide by $N-1$)
+#### Step 4 — Covariance matrix (sample covariance, divide by $N-1$)
 
 Covariance formula for two features $X$ and $Y$:
 
@@ -275,7 +275,7 @@ $$
 
 
 
-## Step 5 — Solve eigenproblem for $S$
+#### Step 5 — Solve eigenproblem for $S$
 
 We need eigenvalues $\lambda$ and eigenvectors $u$ solving:
 
@@ -322,9 +322,17 @@ So eigenvalues (sorted descending): $\lambda_1 \approx 30.3849$, $\lambda_2 \app
 
 
 
-## Eigenvectors (directions of principal components)
+#### Eigenvectors (directions of principal components)
 
 Solve $(S - \lambda I)u=0$.
+
+$$\begin{bmatrix}14-\lambda & -11\\
+-11 & 23-\lambda\end{bmatrix} 
+\cdot 
+\begin{bmatrix}u_1\\
+u_2\end{bmatrix} =  
+\begin{bmatrix}0\\
+0\end{bmatrix}$$
 
 For $\lambda_1 \approx 30.38486432$:
 

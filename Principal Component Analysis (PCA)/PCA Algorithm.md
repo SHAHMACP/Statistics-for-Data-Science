@@ -273,16 +273,17 @@ $$
 
 (Confirm: symmetric and positive semidefinite.)
 
----
 
-## Step 4 — Solve eigenproblem for $S$
+
+## Step 5 — Solve eigenproblem for $S$
 
 We need eigenvalues $\lambda$ and eigenvectors $u$ solving:
 
 $$
 |S - \lambda I| = 0
 \quad\Rightarrow\quad
-\det\begin{bmatrix}14-\lambda & -11\\ -11 & 23-\lambda\end{bmatrix}=0
+\det\begin{bmatrix}14-\lambda & -11\\
+-11 & 23-\lambda\end{bmatrix}=0
 $$
 
 Compute determinant:
@@ -310,10 +311,6 @@ $$
 Numerically:
 
 $$
-\sqrt{565} \approx 23.76972865
-$$
-
-$$
 \lambda_1 \approx \frac{37 + 23.76972865}{2} \approx 30.38486432
 $$
 
@@ -321,11 +318,11 @@ $$
 \lambda_2 \approx \frac{37 - 23.76972865}{2} \approx 6.61513568
 $$
 
-So eigenvalues (sorted descending): $\lambda_1 \approx 30.3849$, $\lambda_2 \approx 6.6151$.
+So eigenvalues (sorted descending): $\lambda_1 \approx 30.3849$, $\lambda_2 \approx 6.6151$ where $\lambda_1>\lambda_2$.
 
 
 
-## Step 5 — Eigenvectors (directions of principal components)
+## Eigenvectors (directions of principal components)
 
 Solve $(S - \lambda I)u=0$.
 

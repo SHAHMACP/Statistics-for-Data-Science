@@ -345,20 +345,23 @@ $$
 $$
 (-16.38486432) u_1 - 11 u_2 = 0
 \quad\Rightarrow\quad
-u_1 = \frac{-11}{-16.38486432} u_2 = \frac{11}{16.38486432}\,u_2
+u_1 = \frac{-11}{16.38486432} u_2 = -0.6713 u_2
 $$
 
-Choose $u_2 = 1$ to get unnormalized eigenvector:
+Choose $u_2 = -1$ to get an unnormalized eigenvector:
 
 $$
-u^{(1)} \propto \begin{bmatrix} 11/16.38486432 \\ 1 \end{bmatrix}
-\approx \begin{bmatrix} 0.6718 \\ 1 \end{bmatrix}
+u^{(1)} \propto \begin{bmatrix} 0.6713 \\
+-1 \end{bmatrix}
 $$
+
+#### Step 6 — Normalize to unit length
 
 Normalize to unit length to obtain the principal component direction (unit eigenvector). Numerically (using standard eigen decomposition) the normalized eigenvector corresponding to the largest eigenvalue is:
 
 $$
-\mathbf{e}_1 =
+\mathbf{e}_1 = \begin{bmatrix} \frac{0.6713}{\sqrt{(0.6713)^2 +(-1)^2}} \\
+\frac{-1}{\sqrt{(0.6713)^2 +(-1)^2}} \end{bmatrix} = 
 \begin{bmatrix}
 0.55738997\\
 -0.83025082
@@ -375,9 +378,44 @@ $$
 
 (verify orthogonality: $\mathbf{e}_1^\top \mathbf{e}_2 \approx 0$.)
 
----
+#### Step 7 — Project the centered data onto PC1 (compute scores)
 
-## Step 6 — Explained variance
+Projection (score) for sample $j$:
+
+$$\text{PC1 score}_j = \mathbf{e}_1^\top  X_{\text{centered}}$$
+
+Using the centered rows computed earlier and $\mathbf{e}_1 = \begin{bmatrix}
+0.55738997\\
+-0.83025082
+\end{bmatrix}^\top$, compute scores:
+
+$$
+\text{PC1 score}_j = \mathbf{e}_1^\top X_{\text{centered}} = \begin{bmatrix}
+0.55738997 \\
+-0.83025082
+\end{bmatrix}
+\begin{bmatrix}
+-4 & 2.5 \\
+0 & -4.5 \\
+5 & -3.5 \\
+-1 & 5.5
+\end{bmatrix}= 
+$$
+
+1. $(-4)(0.55739) + (2.5)(-0.83025) \approx -4.30518692$
+2. $(0)(0.55739) + (-4.5)(-0.83025) \approx 3.73612869$
+3. $(5)(0.55739) + (-3.5)(-0.83025) \approx 5.69282771$
+4. $(-1)(0.55739) + (5.5)(-0.83025) \approx -5.12376947$
+
+So the 1‑D projected dataset (scores on PC1) is approximately:
+
+$$
+\text{PC1 scores} = [-4.3052,\; 3.7361,\; 5.6928,\; -5.1238]
+$$
+
+(These are the coordinates of each sample along the first principal component.)
+
+## Step 8 — Explained variance (OPTIONAL)
 
 Total variance = $\lambda_1 + \lambda_2 = 30.38486432 + 6.61513568 = 37$.
 
@@ -394,49 +432,6 @@ $$
 So PC1 already explains \~82% of the total variance — a good reason to reduce to 1 component.
 
 ---
-
-## Step 7 — Project the centered data onto PC1 (compute scores)
-
-Projection (score) for sample $j$:
-
-$$
-\text{score}_j = \mathbf{e}_1^\top \; (\mathbf{x}_j - \bar{\mathbf{m}})
-$$
-
-Using the centered rows computed earlier and $\mathbf{e}_1 = [0.55738997,\; -0.83025082]^\top$, compute scores:
-
-Centered data rows:
-
-1. $[-4,\; 2.5]$
-2. $[0,\; -4.5]$
-3. $[5,\; -3.5]$
-4. $[-1,\; 5.5]$
-
-Dot with $\mathbf{e}_1$:
-
-1. $(-4)(0.55739) + (2.5)(-0.83025) \approx -4.30518692$
-2. $(0)(0.55739) + (-4.5)(-0.83025) \approx 3.73612869$
-3. $(5)(0.55739) + (-3.5)(-0.83025) \approx 5.69282771$
-4. $(-1)(0.55739) + (5.5)(-0.83025) \approx -5.12376947$
-
-So the 1‑D projected dataset (scores on PC1) is approximately:
-
-$$
-\text{PC1 scores} = [-4.3052,\; 3.7361,\; 5.6928,\; -5.1238]
-$$
-
-(These are the coordinates of each sample along the first principal component.)
-
----
-
-## Optional: reconstruct approximate original values from PC1 (1‑D approximation)
-
-If desired, one can reconstruct approximate original centered data by:
-
-$$
-\hat{X}_{\text{centered}} = (\text{scores}) \cdot \mathbf{e}_1^\top
-$$
-
 Then add back the mean $\bar{\mathbf{m}}$ to get approximate original coordinates. This shows information lost by keeping only PC1.
 
 ---

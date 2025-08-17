@@ -374,7 +374,7 @@ $$
 For $\lambda_2$ the eigenvector (orthogonal to $\mathbf{e}_1$) is:
 
 $$
-\mathbf{e}_2 \approx \begin{bmatrix}-0.83025082\\ -0.55738997\end{bmatrix}
+\mathbf{e}_2 \approx \begin{bmatrix}0.83025082\\ 0.55738997\end{bmatrix}
 $$
 
 (verify orthogonality: $\mathbf{e}_1^\top \mathbf{e}_2 \approx 0$.)

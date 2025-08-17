@@ -383,29 +383,13 @@ $$
 
 Projection (score) for sample $j$:
 
-$$PC1 score_j = \mathbf{e}_1^\top  X_{\text{centered}}$$
+![equation](https://latex.codecogs.com/svg.latex?\text{PC1%20score}_j=\mathbf{e}_1^\top%20X_{\text{centered}})
 
-Using the centered rows computed earlier and $\mathbf{e}_1 = \begin{bmatrix}
-0.55738997\\
--0.83025082
-\end{bmatrix}^\top$, compute scores:
 
-$$
-\text{PC1 score}_j = \mathbf{e}_1^\top X_{\text{centered}} = \begin{bmatrix}
-0.55738997 \\
--0.83025082
-\end{bmatrix}
-\begin{bmatrix}
--4 & 2.5 \\
-0 & -4.5 \\
-5 & -3.5 \\
--1 & 5.5
-\end{bmatrix}\approx  
-\begin{bmatrix}
- -4.30518692$ \\
-3.73612869$ \\
- 5.69282771$ \\
- -5.12376947 \end{bmatrix} $$
+Using the centered rows computed earlier and the normalized eigenvector, compute scores:
+
+![PC1 row-wise](https://latex.codecogs.com/svg.latex?\mathbf{e}_1^\top%20X_{\text{centered}}^\top=\begin{bmatrix}0.55738997&-0.83025082\end{bmatrix}\begin{bmatrix}-4&0&5&-1\\2.5&-4.5&-3.5&5.5\end{bmatrix}\approx\begin{bmatrix}-4.30518692&3.73612869&5.69282771&-5.12376947\end{bmatrix})
+
 
 So the 1‑D projected dataset (scores on PC1) is approximately:
 
@@ -432,7 +416,5 @@ $$
 So PC1 already explains \~82% of the total variance — a good reason to reduce to 1 component.
 
 ---
-
-
 
 

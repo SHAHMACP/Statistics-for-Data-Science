@@ -357,7 +357,8 @@ $$
 
 #### Step 6 — Normalize to unit length
 
-Normalize to unit length to obtain the principal component direction (unit eigenvector). Numerically (using standard eigen decomposition) the normalized eigenvector corresponding to the largest eigenvalue is:
+Normalize to unit length to obtain the principal component direction (unit eigenvector). 
+Numerically (using standard eigen decomposition), the normalized eigenvector corresponding to the largest eigenvalue is:
 
 $$
 \mathbf{e}_1 = \begin{bmatrix} \frac{0.6713}{\sqrt{(0.6713)^2 +(-1)^2}} \\
@@ -382,7 +383,7 @@ $$
 
 Projection (score) for sample $j$:
 
-$$\text{PC1 score}_j = \mathbf{e}_1^\top  X_{\text{centered}}$$
+$$PC1 score_j = \mathbf{e}_1^\top  X_{\text{centered}}$$
 
 Using the centered rows computed earlier and $\mathbf{e}_1 = \begin{bmatrix}
 0.55738997\\
@@ -399,13 +400,12 @@ $$
 0 & -4.5 \\
 5 & -3.5 \\
 -1 & 5.5
-\end{bmatrix}= 
-$$
-
-1. $(-4)(0.55739) + (2.5)(-0.83025) \approx -4.30518692$
-2. $(0)(0.55739) + (-4.5)(-0.83025) \approx 3.73612869$
-3. $(5)(0.55739) + (-3.5)(-0.83025) \approx 5.69282771$
-4. $(-1)(0.55739) + (5.5)(-0.83025) \approx -5.12376947$
+\end{bmatrix}\approx  
+\begin{bmatrix}
+ -4.30518692$ \\
+3.73612869$ \\
+ 5.69282771$ \\
+ -5.12376947 \end{bmatrix} $$
 
 So the 1‑D projected dataset (scores on PC1) is approximately:
 
@@ -415,14 +415,14 @@ $$
 
 (These are the coordinates of each sample along the first principal component.)
 
-## Step 8 — Explained variance (OPTIONAL)
+#### Step 8 — Explained variance (OPTIONAL)
 
 Total variance = $\lambda_1 + \lambda_2 = 30.38486432 + 6.61513568 = 37$.
 
 Explained variance ratio:
 
 $$
-\text{PC1 explained} = \frac{\lambda_1}{\lambda_1+\lambda_2} \approx \frac{30.38486432}{37} \approx 0.8212 \; (82.12\%)
+\text{PC1 explained} = \frac{\lambda_1}{\lambda_1+\lambda_2} \approx \frac{30.38486432}{37} \approx 0.8212 \  
 $$
 
 $$
@@ -432,9 +432,7 @@ $$
 So PC1 already explains \~82% of the total variance — a good reason to reduce to 1 component.
 
 ---
-Then add back the mean $\bar{\mathbf{m}}$ to get approximate original coordinates. This shows information lost by keeping only PC1.
 
----
 
 
 

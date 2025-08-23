@@ -15,9 +15,7 @@ They represent underlying constructs that influence the observed values.
 ### Examples:
 
 * In psychology: "Intelligence" (latent) is measured using test scores (observed).
-
 * In marketing: "Customer satisfaction" (latent) is inferred from survey responses (observed).
-
 * In education: "Language ability" (latent) is inferred from essay, reading, vocabulary scores.
 
 
@@ -47,43 +45,24 @@ Factor 2 = Service & Environment (Ambience, Cleanliness, Friendliness, Speed)
 ## Assumptions of Factor Analysis
 
 1. No outliers – extreme values distort results.
-
-
 2. Sufficient sample size – at least 5–10 observations per variable.
-
-
 3. Interrelated variables – observed variables must be correlated.
-
-
 4. Linearity – relationships among variables assumed linear.
-
-
 5. Normality – ideally variables follow normal distribution.
-
-
 6. Homogeneity of variance – variances should be roughly equal.
-
-
 7. Measurement scale – interval or ratio scale preferred.
-
-
 
 
 ---
 
 ## Purpose of Factor Analysis
 
-Simplify data into fewer factors.
-
-Discover hidden patterns.
-
-Group similar variables together.
-
-Improve predictions.
-
-Help design and validate surveys/tests.
-
-Generate new insights about relationships.
+* Simplify data into fewer factors.
+* Discover hidden patterns.
+* Group similar variables together.
+* Improve predictions.
+* Help design and validate surveys/tests.
+* Generate new insights about relationships.
 
 
 

@@ -14,11 +14,11 @@ They represent underlying constructs that influence the observed values.
 
 ### Examples:
 
-In psychology: "Intelligence" (latent) is measured using test scores (observed).
+* In psychology: "Intelligence" (latent) is measured using test scores (observed).
 
-In marketing: "Customer satisfaction" (latent) is inferred from survey responses (observed).
+* In marketing: "Customer satisfaction" (latent) is inferred from survey responses (observed).
 
-In education: "Language ability" (latent) is inferred from essay, reading, vocabulary scores.
+* In education: "Language ability" (latent) is inferred from essay, reading, vocabulary scores.
 
 
 

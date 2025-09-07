@@ -114,19 +114,23 @@ Factor Analysis Model is a statistical framework used to describe the relationsh
 ### Factor Loadings: 
 ● Higher factor loadings (closer to 1) indicate that the variable strongly relates to the factor, while lower loadings (closer to 0)
 show a weaker relationship.
+
 ● Example: In a restaurant survey, if "Food Taste" has a factor loading of 0.8 on a "Food Quality" factor, it means "Food Taste" is
 strongly associated with that factor.
 
 ### Eigenvalues: 
 ● Eigenvalues measure the amount of variance in the observed variables that a particular factor explains.
+
 ● Factors with larger eigenvalues explain more variance. Typically, factors with eigenvalues greater than 1 are considered
 important.
 
 ### Factor Scores: 
 ● Factor scores are calculated values that estimate an individual's or an observation’s position on the identified
 latent factors.
+
 ● Factor scores represent how much each individual scores on the underlying factors based on the observed
 variables.
+
 ● Example: If a customer scores high on the "Food Quality" factor, it means they had a positive experience
 related to food in a restaurant.
 

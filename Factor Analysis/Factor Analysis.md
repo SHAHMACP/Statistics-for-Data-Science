@@ -91,49 +91,80 @@ Goal: Confirm if data fits the model.
 
 The general model:
 
-X_i = \lambda_{i1}F_1 + \lambda_{i2}F_2 + \cdots + \lambda_{im}F_m + \epsilon_i
+$$X_i = \mu + \lambda_{i1}F_1 + \lambda_{i2}F_2 + \cdots + \lambda_{im}F_m + \epsilon_i$$
+
+In matrix form,
+$$X=\mu + \Lambda F + \epsilon $$
 
 Where:
 
- = observed variable
-
- = common factors (latent)
-
- = factor loadings
-
- = unique/error variance
+- $X: p * 1$ = vector of observed variables
+- $\mu : p*1$ = vector of means of observed variables
+- $\Lambda: p*m$ = matrix of factor loadings( p is the number of  observed  variables and m is the number of latent factors)
+- $F: m*1$ = vector of common factors (latent)
+- $\epsilon:p*1$ = vector of error terms (unique/error variance which are specific to each observed variable)
 
 
+Factor Analysis Model is a statistical framework used to describe the relationships between observed variables and underlying latent factors. The model assumes that the observed variables are influenced by a smaller set of unobserved variables (factors), which explain the correlations among them.
 
 ---
 
 ## Important Terms
 
-Factor Loadings: Correlation between observed variable & factor.
+### Factor Loadings: 
+● Higher factor loadings (closer to 1) indicate that the variable strongly relates to the factor, while lower loadings (closer to 0)
+show a weaker relationship.
+● Example: In a restaurant survey, if "Food Taste" has a factor loading of 0.8 on a "Food Quality" factor, it means "Food Taste" is
+strongly associated with that factor.
 
-Eigenvalues: Amount of variance explained by each factor.
+### Eigenvalues: 
+● Eigenvalues measure the amount of variance in the observed variables that a particular factor explains.
+● Factors with larger eigenvalues explain more variance. Typically, factors with eigenvalues greater than 1 are considered
+important.
 
-Factor Scores: Each individual’s score on the latent factors.
+### Factor Scores: 
+● Factor scores are calculated values that estimate an individual's or an observation’s position on the identified
+latent factors.
+● Factor scores represent how much each individual scores on the underlying factors based on the observed
+variables.
+● Example: If a customer scores high on the "Food Quality" factor, it means they had a positive experience
+related to food in a restaurant.
 
 
 
 ---
 
+
+
 ## Methods of Extracting Common Factors
 
-1. Principal Component Analysis (PCA) – explains maximum variance.
+### 1. Principal Component Analysis (PCA) – explains maximum variance :
+  
+   A technique to reduce the dimensionality of data by transforming original variables into a smaller set of uncorrelated components. PCA identifies components that explain the maximum variance in the data. It doesn’t differentiate between shared and unique variance.
 
 
-2. Principal Axis Factoring (PAF) – focuses only on common variance.
+### 2. Principal Axis Factoring (PAF) – focuses only on common variance:
+
+   method to identify the underlying latent factors that explain the correlations among observed variables by focusing only on the shared variance
+(common variance). CFA estimates factors that account for the variance shared among the observed variables, excluding the unique (error) variance.
 
 
-3. Maximum Likelihood (ML) – model fitting with statistical tests.
+### 3. Maximum Likelihood (ML) – model fitting with statistical tests:
+
+   A statistical method used to estimate factor loadings and assess how well the model fits the data. MLE maximizes the likelihood that the factor model reproduces the observed data. It also provides statistical tests to
+evaluate model fit and offers confidence intervals for factor estimates.
 
 
-4. Image Factoring – based on partial correlations.
+### 4. Image Factoring – based on partial correlations:
+
+   A method that uses partial correlations to estimate factors, focusing on maximizing the amount of shared variance among variables. Image factoring extracts factors by analyzing the partial correlations among variables, grouping variables that have similar correlation patterns.
 
 
-5. Other methods: Alpha factoring, ULS, GLS.
+### 5. Other methods: Alpha factoring, ULS, GLS:
+● Alpha Factoring: Focuses on maximizing the reliability (internal consistency) of the factors.
+● Unweighted Least Squares (ULS): A simpler method that minimizes the difference between observed and
+reproduced correlation matrices.
+● Generalized Least Squares (GLS): Similar to ML but more computationally efficient for large samples.
 
 
 

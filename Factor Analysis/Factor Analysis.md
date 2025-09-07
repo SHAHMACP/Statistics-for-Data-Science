@@ -162,8 +162,10 @@ evaluate model fit and offers confidence intervals for factor estimates.
 
 ### 5. Other methods: Alpha factoring, ULS, GLS:
 ● Alpha Factoring: Focuses on maximizing the reliability (internal consistency) of the factors.
+
 ● Unweighted Least Squares (ULS): A simpler method that minimizes the difference between observed and
 reproduced correlation matrices.
+
 ● Generalized Least Squares (GLS): Similar to ML but more computationally efficient for large samples.
 
 
@@ -231,37 +233,64 @@ Zero → average level.
 
 ## Applications of Factor Analysis
 
-Market Research: Identify drivers of customer satisfaction.
+###  Market Research:
+● Used to identify key factors influencing consumer behavior, such as brand perception, customer satisfaction, and
+purchasing decisions.
 
-Psychology: Personality & intelligence testing.
+● Example: Grouping product attributes (e.g., price, quality, design) to find common factors influencing customer
+preferences.
+### Psychometrics and Behavioral Research:
+● Applied to develop and validate psychological tests by identifying underlying traits or factors (e.g., intelligence,
+personality).
 
-Healthcare: Grouping symptoms into disorders.
+● Example: In personality assessments, factor analysis can reveal key dimensions like extraversion and openness.
+### Healthcare and Medical Research:
+● Helps in reducing variables like symptoms or diagnostic criteria into meaningful factors (e.g., mental health
+conditions or disease risk factors).
 
-Education: Identifying core competencies.
+● Example: Grouping symptoms of anxiety and depression into common underlying mental health factors.
+### Education:
+Used to simplify academic performance metrics, identifying key areas of student learning or educational outcomes.
 
-Finance: Finding hidden risk factors.
+Example: Analyzing student performance across subjects to identify core competencies like critical thinking or problem-solving.
+### Finance:
+Used to reduce a large number of financial indicators (e.g., stock prices, interest rates) into a few underlying factors influencing
+market trends.
 
-HR: Grouping employee skills.
+Example: In portfolio management, identifying factors like market risk or interest rate risk.
+### Social Sciences:
+Helps in exploring complex social issues by reducing multiple variables (e.g., income, education, and occupation) into common
+social factors like socioeconomic status.
 
+Example: Identifying key factors influencing social mobility.
+### Human Resources:
+Applied to identify key competencies or employee attributes influencing job performance.
+
+Example: Grouping employee skills and behavior into factors like leadership, teamwork, or technical ability.
 
 
 ---
 ## Advantages of Factor Analysis
 
-✅ Reveals hidden patterns.
-✅ Reduces dimensionality.
-✅ Simplifies survey/test analysis.
-✅ Useful in predictive modeling.
-
+1.Both objective and subjective attributes can be used.
+2.It can be used to identify the hidden dimensions or constraints which may or may not be
+apparent from direct analysis.
+3.It is not extremely difficult to do and at the same time it's inexpensive and gives accurate
+results.
+4.There is flexibility in naming and using dimensions.
 
 ---
 
 ## Disadvantages of Factor Analysis
 
-❌ Naming factors is subjective.
-❌ Results depend on assumptions.
-❌ Factors are not directly measurable.
-❌ If variables are unrelated → no useful factors.
-
+1. The usefulness depends on the researcher’s ability to develop a complete and accurate set of
+product attributes. If important attributes are missed the value of procedure is reduced
+accordingly.
+2. Naming of the factors can be difficult multiple attributes can be highly correlated with no
+apparent reasons.
+3. If the observed variables are completely unrelated the factor analysis is unable to produce
+meaningful pattern.
+4. It is not possible to know factors actually represents, only theory can help inform the
+researcher’s on this.
 
 ---

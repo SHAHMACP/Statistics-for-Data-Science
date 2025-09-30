@@ -109,6 +109,61 @@ Factor Analysis Model is a statistical framework used to describe the relationsh
 
 ---
 
+## Model Assumptions
+
+### Mean Assumptions
+
+1. The specific factors (errors) are random and have mean zero: $$E(\epsilon_i) = 0, \quad i = 1,2,\dots,p$$
+
+2. The common factors also have mean zero: $$E(F_j) = 0, \quad j = 1,2,\dots,m$$
+
+3. The expected value of each observed variable is: $$E(X_i) = \mu_i$$
+
+
+### Variance Assumptions
+
+1. The common factors are standardized, with variance equal to 1: $$Var(F_j) = 1, \quad j = 1,2,\dots,m$$
+
+2. The specific factors have variances: $$Var(\epsilon_i) = \psi_i, \quad i = 1,2,\dots,p$$
+   Here, $\psi_i$ is called the **specific variance** of variable $i$.
+
+3. The variance of the $i$th observed variable is: $$Var(X_i) = \sum_{j=1}^{m} \lambda_{ij}^2 + \psi_i$$
+
+   * The term $$h_i^2 = \sum_{j=1}^{m} \lambda_{ij}^2$$
+     is called the **communality** of variable $i$.
+   * Larger communality → better representation of the variable by common factors.
+
+
+### Correlation Assumptions
+
+1. The common factors are uncorrelated with one another: $$Cov(F_j, F_k) = 0, \quad j \neq k$$
+
+2. The specific factors are uncorrelated with one another: $$Cov(\epsilon_i, \epsilon_k) = 0, \quad i \neq k$$
+
+3. The specific factors are uncorrelated with the common factors: $$Cov(\epsilon_i, F_j) = 0$$
+
+
+### Covariance Structure of Observed Variables
+
+1. Covariance between two observed variables $X_i$ and $X_k$: $$Cov(X_i, X_k) = \sum_{j=1}^{m} \lambda_{ij} \lambda_{kj}, \quad i \neq k$$
+
+2. Covariance between an observed variable $X_i$ and a factor $F_j$: $$Cov(X_i, F_j) = \lambda_{ij}$$
+
+3. In **matrix form**, the variance–covariance matrix of observed variables is: $$\Sigma = \Lambda \Lambda^\top + \Psi$$
+
+Where
+
+$$\Psi =\begin{bmatrix}
+\psi_1 & 0 & \cdots & 0 \
+0 & \psi_2 & \cdots & 0 \
+\vdots & \vdots & \ddots & \vdots \
+0 & 0 & \cdots & \psi_p
+\end{bmatrix}
+$$
+
+---
+
+
 ## Important Terms
 
 ### Factor Loadings: 
@@ -179,13 +234,13 @@ reproduced correlation matrices.
 
 ## Determining Number of Factors
 
-Eigenvalue Criterion (Kaiser’s Rule) – retain factors with eigenvalue > 1.
+1. Eigenvalue Criterion (Kaiser’s Rule) – retain factors with eigenvalue > 1.
 
-Scree Plot – look for the “elbow.”
+2. Scree Plot – look for the “elbow.”
 
-Cumulative Variance Explained – keep enough factors to explain 70–80% variance.
+3. Cumulative Variance Explained – keep enough factors to explain 70–80% variance.
 
-Parallel Analysis – compare with random data eigenvalues.
+4. Parallel Analysis – compare with random data eigenvalues.
 
 
 
@@ -276,12 +331,15 @@ Example: Grouping employee skills and behavior into factors like leadership, tea
 ---
 ## Advantages of Factor Analysis
 
-1.Both objective and subjective attributes can be used.
+1. Both objective and subjective attributes can be used.
+
 2.It can be used to identify the hidden dimensions or constraints which may or may not be
 apparent from direct analysis.
+
 3.It is not extremely difficult to do and at the same time it's inexpensive and gives accurate
 results.
-4.There is flexibility in naming and using dimensions.
+
+4. There is flexibility in naming and using dimensions.
 
 ---
 
@@ -290,10 +348,13 @@ results.
 1. The usefulness depends on the researcher’s ability to develop a complete and accurate set of
 product attributes. If important attributes are missed the value of procedure is reduced
 accordingly.
+
 2. Naming of the factors can be difficult multiple attributes can be highly correlated with no
 apparent reasons.
+
 3. If the observed variables are completely unrelated the factor analysis is unable to produce
 meaningful pattern.
+
 4. It is not possible to know factors actually represents, only theory can help inform the
 researcher’s on this.
 

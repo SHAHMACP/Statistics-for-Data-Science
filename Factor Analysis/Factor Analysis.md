@@ -194,6 +194,91 @@ related to food in a restaurant.
 ---
 
 
+## Methods for Estimating Factor Scores from the Data
+
+After extracting common factors in Factor Analysis, we may want to **estimate factor scores** (the values of the latent factors for each observation). Several methods exist for this estimation:
+
+
+
+### 1. Regression Method
+
+* Uses a **regression model** to predict factor scores based on factor loadings.
+* Factor scores are a **linear combination of observed variables**, adjusted for loadings.
+
+$$
+\hat{F} = (\Lambda' \Sigma^{-1} \Lambda)^{-1} \Lambda' \Sigma^{-1} X
+$$
+
+Where:
+
+* $\hat{F}$ = estimated factor score
+* $\Lambda$ = factor loading matrix
+* $\Sigma$ = covariance matrix of observed variables
+* $X$ = observed data
+
+
+
+### 2. Bartlett Method
+
+* Minimizes the **error variance**.
+* Produces factor scores that are **uncorrelated with the unique errors**.
+
+$$
+\hat{F} = (\Lambda' \Psi^{-1} \Lambda)^{-1} \Lambda' \Psi^{-1} X
+$$
+
+Where:
+
+* $\Psi$ = diagonal matrix of unique variances (specific errors).
+
+
+### 3. Anderson–Rubin Method
+
+* Produces factor scores that are **standardized and orthogonal**.
+* Ensures factor scores are **uncorrelated**, with **mean 0** and **variance 1**.
+* Commonly used when independence between estimated factor scores is required.
+
+
+### 4. Thurstone’s Method
+
+* Transforms raw variables into standardized scores.
+* Factor scores are then computed from these standardized values.
+* Frequently used in **psychological research**.
+
+
+### 5. Principal Component Analysis (PCA) Method
+
+* PCA is not technically a factor score method, but often used in **Exploratory Factor Analysis (EFA)**.
+* Component scores maximize the variance explained by each component.
+* Scores are **linear combinations of observed variables**.
+
+$$
+Z = XW
+$$
+
+Where:
+
+* $Z$ = matrix of principal component scores
+* $X$ = observed variable matrix
+* $W$ = weight matrix (eigenvectors of covariance matrix)
+
+
+### 6. Maximum Likelihood Estimation (MLE)
+
+* Estimates factor scores by **maximizing the likelihood** that the observed data fits the factor model.
+* Attempts to find parameters (factor loadings, factor scores, unique variances) that best explain the data.
+
+$$
+L(\theta | X) = \prod_{i=1}^{n} f(X_i | \theta)
+$$
+
+Where:
+
+* $L$ = likelihood function
+* $\theta$ = parameters (factor loadings, scores, variances)
+* $X_i$ = observed data for the $i^{th}$ individual
+
+---
 
 ## Methods of Extracting Common Factors
 
@@ -246,27 +331,54 @@ reproduced correlation matrices.
 
 ---
 
+Perfect 👌 Here’s a clean, **GitHub-ready write-up** of your content with proper Markdown formatting and math symbols (if needed). You can paste this directly into your repo README:
+
+---
+
 ## Transformation of Factor Analysis Solutions
 
-Factors are often rotated to improve interpretation.
+In factor analysis, after extracting the initial factors, you often apply **transformations** to make the results easier to interpret.
+These transformations help clarify the relationships between **factors** and **observed variables**.
 
-Orthogonal Rotations (factors independent):
-
-Varimax
-
-Quartimax
-
-Equamax
+The most common types of transformations are **rotation methods**.
 
 
-Oblique Rotations (factors correlated):
 
-Promax
+### Two Types of Rotation Methods
 
-Direct Oblimin
+#### 1. Orthogonal Rotation
+
+* Keeps factors **uncorrelated (independent)** while making factor loadings easier to interpret.
+* Each factor remains at right angles (**90°**) to one another.
+
+**Types:**
+
+* **Varimax**: Maximizes the variance of squared loadings for each factor.
+  → Makes factors more interpretable, with each variable loading highly on only one factor.
+* **Quartimax**: Minimizes the number of factors needed to explain each variable.
+  → Focuses more on simplifying variables rather than factors.
+* **Equamax**: A combination of Varimax and Quartimax, balancing both objectives.
 
 
-Rotation makes loadings easier to interpret.
+#### 2. Oblique Rotation
+
+* Allows factors to be **correlated**.
+* More realistic, since factors in real-world data are usually related.
+
+**Types:**
+
+* **Promax**: A quick method that allows correlation between factors by relaxing the orthogonality constraint.
+* **Direct Oblimin**: Allows correlations between factors and adjusts the solution accordingly.
+
+
+
+### Why Transformation is Important
+
+* **Improved Interpretability**:
+  Raw factor solutions often have variables loading on multiple factors. Rotation simplifies this, making it clearer which variables belong to which factors.
+
+* **Realistic Representation**:
+  Orthogonal methods assume no correlation between factors. Oblique methods allow related factors, providing a more accurate picture of the data.
 
 
 ---

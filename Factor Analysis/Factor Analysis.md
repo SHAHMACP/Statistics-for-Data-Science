@@ -333,10 +333,10 @@ Example: Grouping employee skills and behavior into factors like leadership, tea
 
 1. Both objective and subjective attributes can be used.
 
-2.It can be used to identify the hidden dimensions or constraints which may or may not be
+2. It can be used to identify the hidden dimensions or constraints which may or may not be
 apparent from direct analysis.
 
-3.It is not extremely difficult to do and at the same time it's inexpensive and gives accurate
+3. It is not extremely difficult to do and at the same time it's inexpensive and gives accurate
 results.
 
 4. There is flexibility in naming and using dimensions.

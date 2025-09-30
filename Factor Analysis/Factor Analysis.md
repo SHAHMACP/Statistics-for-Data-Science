@@ -331,10 +331,6 @@ reproduced correlation matrices.
 
 ---
 
-Perfect 👌 Here’s a clean, **GitHub-ready write-up** of your content with proper Markdown formatting and math symbols (if needed). You can paste this directly into your repo README:
-
----
-
 ## Transformation of Factor Analysis Solutions
 
 In factor analysis, after extracting the initial factors, you often apply **transformations** to make the results easier to interpret.

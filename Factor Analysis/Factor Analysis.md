@@ -193,6 +193,41 @@ related to food in a restaurant.
 
 ---
 
+## Factor Scores and Their Interpretation
+
+Factor scores are **numerical values** that estimate the contribution of each **latent factor** for a particular observation (e.g., individual, item). They allow us to understand how strongly each observation is associated with the underlying factors extracted in factor analysis.
+
+
+###  Interpretation of Factor Scores
+
+* **Positive Scores**
+  A positive factor score indicates that the observation has a **high level of the factor**.
+  Example: If *Factor 1* represents **Customer Satisfaction**, a high score for an individual suggests they are highly satisfied.
+
+* **Negative Scores**
+  A negative factor score indicates that the observation has a **low level of the factor**.
+  Example: A negative score on *Customer Satisfaction* suggests dissatisfaction.
+
+* **Zero Scores**
+  A factor score near zero indicates that the observation has an **average level of the factor**, neither high nor low.
+
+
+
+####  Example: Restaurant Survey
+
+Suppose a factor analysis identifies two factors:
+
+* **Factor 1**: Customer Satisfaction
+* **Factor 2**: Food Quality
+
+For one customer:
+
+* **Factor 1 Score = +1.2** → This customer has a **high satisfaction level**.
+* **Factor 2 Score = –0.5** → This customer rates **food quality below average**.
+
+This customer is **highly satisfied with the service** but **not impressed by the food quality**.
+
+---
 
 ## Methods for Estimating Factor Scores from the Data
 
@@ -379,43 +414,6 @@ The most common types of transformations are **rotation methods**.
 
 ---
 
-
-## Factor Scores and Their Interpretation
-
-Factor scores are **numerical values** that estimate the contribution of each **latent factor** for a particular observation (e.g., individual, item). They allow us to understand how strongly each observation is associated with the underlying factors extracted in factor analysis.
-
-
-### Interpretation of Factor Scores
-
-* **Positive Scores**
-  A positive factor score indicates that the observation has a **high level of the factor**.
-  Example: If *Factor 1* represents **Customer Satisfaction**, a high score for an individual suggests they are highly satisfied.
-
-* **Negative Scores**
-  A negative factor score indicates that the observation has a **low level of the factor**.
-  Example: A negative score on *Customer Satisfaction* suggests dissatisfaction.
-
-* **Zero Scores**
-  A factor score near zero indicates that the observation has an **average level of the factor**, neither high nor low.
-
-
-#### Example: Restaurant Survey
-
-Suppose a factor analysis identifies two factors:
-
-* **Factor 1**: Customer Satisfaction
-* **Factor 2**: Food Quality
-
-For one customer:
-
-* **Factor 1 Score = +1.2** → This customer has a **high satisfaction level**.
-* **Factor 2 Score = –0.5** → This customer rates **food quality below average**.
-
-This customer is **highly satisfied with the service** but **not impressed by the food quality**.
-
-
-
----
 
 ## Applications of Factor Analysis
 

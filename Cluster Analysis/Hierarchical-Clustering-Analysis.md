@@ -79,35 +79,11 @@ Perform clustering using **Complete Linkage Method**.
 
 📺 **Reference Video:** [Complete Linkage HCA Example](https://www.youtube.com/watch?v=JeY9P-Vw9hg)
 
----
 
-## 🌿 8. Dendrogram Representation
-
-A **dendrogram** visually represents how clusters merge.
-
-- **X-axis:** Data points  
-- **Y-axis:** Distance (or dissimilarity) at which clusters are combined  
-
-```python
-import matplotlib.pyplot as plt
-from scipy.cluster.hierarchy import linkage, dendrogram
-import numpy as np
-
-X = np.array([[2,6],[3,4],[6,8],[7,10],[5,8],[4,7]])
-
-Z = linkage(X, method='complete')
-
-plt.figure(figsize=(7,5))
-dendrogram(Z)
-plt.title('Hierarchical Clustering Dendrogram (Complete Linkage)')
-plt.xlabel('Data Points')
-plt.ylabel('Distance')
-plt.show()
-````
 
 ---
 
-## 🧠 9. Advantages of Hierarchical Clustering
+## Advantages of Hierarchical Clustering
 
 * No need to specify number of clusters (k) in advance.
 * Produces a **hierarchical structure** that’s easy to interpret.
@@ -116,7 +92,7 @@ plt.show()
 
 ---
 
-## ⚠️ 10. Disadvantages of Hierarchical Clustering
+## Disadvantages of Hierarchical Clustering
 
 * **Computationally expensive** (O(n³) time complexity).
 * **Not scalable** to very large datasets.
@@ -141,10 +117,10 @@ plt.show()
 
 | Feature            | Hierarchical Clustering | K-Means Clustering        |
 | ------------------ | ----------------------- | ------------------------- |
-| Cluster type       | Hierarchical            | Flat                      |
+| Cluster type       | Different partiitions   | Single partition          |
 | Number of clusters | Not needed initially    | Must specify (k)          |
 | Scalability        | Low                     | High                      |
 | Output             | Dendrogram              | Centroids                 |
-| Determinism        | Deterministic           | Depends on initialization |
+| Runtime Efficiency | Less                    | More                      |
 
 ---

@@ -47,14 +47,14 @@ Linkage defines how the distance between two clusters is computed.
 |---------|--------------|----------|
 | **Single Linkage (Nearest Neighbor)** | Minimum distance between any two points in two clusters. | $D(C_1, C_2) = \min_{i \in C_1, j \in C_2} d(i, j)$ |
 | **Complete Linkage (Farthest Neighbor)** | Maximum distance between any two points in two clusters. | $D(C_1, C_2) = \max_{i \in C_1, j \in C_2} d(i, j)$ |
-| **Average Linkage** | Average distance between all points in the two clusters. | $D(C_1, C_2) = \frac{1}{|C_1||C_2|}\sum_{i\in C_1}\sum_{j\in C_2} d(i,j)$ |
+| **Average Linkage** | Average distance between all points in the two clusters. |  |
 
 ![image](https://github.com/user-attachments/assets/a3f77b15-c862-4ee9-ad5e-e9d9e767f5b1)
 
 ---
 
 
-## 🧮 7. Example Problem – Complete Linkage
+## 🧮 7. Example Problem 
 
 ### Distance Matrix
 

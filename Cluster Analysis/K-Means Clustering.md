@@ -84,20 +84,15 @@ $$
 
 ## Improving K-Means Results
 
-1. **Optimal k selection:**  
-   - Use the **Elbow Method** or **Silhouette Score** to find the right number of clusters.  
+1. **Optimal k selection:**  Use the **Elbow Method** or **Silhouette Score** to find the right number of clusters.  
 
-2. **Multiple initializations:**  
-   - Run K-Means multiple times with different random centroids and choose the lowest error.  
+2. **Multiple initializations:**  Run K-Means multiple times with different random centroids and choose the lowest error.  
 
-3. **Data normalization:**  
-   - Standardize features before clustering to avoid bias due to scale differences.  
+3. **Data normalization:**  Standardize features before clustering to avoid bias due to scale differences.  
 
-4. **Outlier handling:**  
-   - Detect and remove outliers that can distort cluster centers.  
+4. **Outlier handling:**  Detect and remove outliers that can distort cluster centers.  
 
-5. **Dimensionality reduction:**  
-   - Use **PCA** to improve performance on high-dimensional data.
+5. **Dimensionality reduction:**  Use **PCA** to improve performance on high-dimensional data.
 
 ---
 
@@ -215,6 +210,7 @@ $$
 
 * **Cluster 1 (C1):** P1(1,1), P2(2,1),P3(2,3), P4(3,2)
 * **Cluster 2 (C2):** P5(4,3), P6(5,5)
+  
 ✅ No change in cluster assignments → **Algorithm converged.**
 
 ---

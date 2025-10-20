@@ -215,3 +215,80 @@ $$
 
 ---
 
+### Problem 2
+
+Cluster the points below into **k = 2** clusters using K-Means (Euclidean distance).
+
+Points:
+
+* P1 = (2,3)
+* P2 = (5,6)
+* P3 = (8,7)
+* P4 = (1,4)
+* P5 = (2,2)
+* P6 = (6,7)
+* P7 = (3,4)
+* P8 = (8,6)
+
+Initial centroids:
+
+* **C1 = (2,3)**
+* **C2 = (5,6)**
+
+
+#### The distances to initial centroids and assignment
+
+Use Euclidean distance $d((x_1,y_1),(x_2,y_2)) = \sqrt{(x_1-x_2)^2 + (y_1-y_2)^2}$.
+
+| Point | Coordinates | d to C1=(2,3) | d to C2=(5,6) | Assigned |
+| ----- | ----------: | ------------: | ------------: | :------: |
+| P1    |       (2,3) |          0.00 |          4.24 |  **C1**  |
+| P2    |       (5,6) |          4.24 |          0.00 |  **C2**  |
+| P3    |       (8,7) |          7.21 |          3.16 |  **C2**  |
+| P4    |       (1,4) |          1.41 |          4.47 |  **C1**  |
+| P5    |       (2,2) |          1.00 |          5.00 |  **C1**  |
+| P6    |       (6,7) |          5.66 |          1.41 |  **C2**  |
+| P7    |       (3,4) |          1.41 |          2.82 |  **C1**  |
+| P8    |       (8,6) |          6.70 |          3.00 |  **C2**  |
+
+#### **Clusters after Iteration 1**
+
+* **Cluster 1 (C1):** P1 (2,3), P4 (1,4), P5 (2,2), P7 (3,4)
+* **Cluster 2 (C2):** P2 (5,6), P3 (8,7), P6 (6,7), P8 (8,6)
+
+
+#### Compute new centroids (after Iteration 1)
+
+Centroid = mean of coordinates of points in the cluster.
+
+$$
+\text{Centroid 1} = \text{mean of {(2,3),(1,4),(2,2),(3,4)}} = (\frac{2+1+2+3}{4} , \frac{3+4+2+4}{4}  )=( 2.0, 3.25 )
+$$
+
+$$
+\text{Centroid 1} = \text{mean of {(5,6),(8,7),(6,7),(8,6)}} = 
+  ( \frac{5+8+6+8}{4} , \frac{6+7+7+6}{4} )= (6.75, 6.50)$$
+
+
+#### Iteration 2 — distances to updated centroids and assignment
+
+| Point | Coordinates | d to C1_new=(2.00,3.25) | d to C2_new=(6.75,6.50) | Assigned |
+| ----- | ----------: | ----------------------: | ----------------------: | :------: |
+| P1    |       (2,3) |                    0.25 |                    5.90 |  **C1**  |
+| P2    |       (5,6) |                    4.07 |                    1.82 |  **C2**  |
+| P3    |       (8,7) |                    7.08 |                    1.35 |  **C2**  |
+| P4    |       (1,4) |                    1.25 |                    5.77 |  **C1**  |
+| P5    |       (2,2) |                    1.11 |                    6.54 |  **C1**  |
+| P6    |       (6,7) |                    5.48 |                    0.2 |  **C2**  |
+| P7    |       (3,4) |                    12.48 |                    4.55 |  **C1**  |
+| P8    |       (8,6) |                    6.60 |                    1.35 |  **C2**  |
+
+
+#### **Clusters after Iteration 1**
+
+* **Cluster 1 (C1):** P1 (2,3), P4 (1,4), P5 (2,2), P7 (3,4)
+* **Cluster 2 (C2):** P2 (5,6), P3 (8,7), P6 (6,7), P8 (8,6)
+
+Assigned clusters did not change from Iteration 1 → the algorithm has **converged**.
+
+---

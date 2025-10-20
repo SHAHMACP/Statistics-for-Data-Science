@@ -123,3 +123,99 @@ Higher values indicate better clustering.
 ---
 
 ## Example
+
+ ### Problem 1
+
+ Use K-Means clustering algorithm to divide the following data into two clusters
+  |  X |  Y |
+| -: | -: |
+|  1 |  1 |
+|  2 |  1 |
+|  2 |  3 |
+|  3 |  2 |
+|  4 |  3 |
+|5   |  5 |
+
+> **Given points:** (1,1), (2,1), (2,3), (3,2), (4,3), (5,5)
+
+Let **k = 2**.
+
+#### Initial centroids:
+
+* **C1 = (2,1)**
+* **C2 = (2,3)**
+
+#### Compute Distances (Iteration 1)
+
+Use **Euclidean Distance Formula:**
+
+$$
+d(x,y) = \sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2}
+$$
+
+| Point | (x, y) | d(C1) | d(C2) | Assigned Cluster |
+| :---- | :----- | ----: | ----: | :--------------: |
+| P1    | (1,1)  |  1.00 |  2.24 |      **C1**      |
+| P2    | (2,1)  |  0.00 |  2.00 |      **C1**      |
+| P3    | (2,3)  |  2.00 |  0.00 |      **C2**      |
+| P4    | (3,2)  |  1.41 |  1.41 |      **C1**      |
+| P5    | (4,3)  |  2.83 |  2.00 |      **C2**      |
+| P6    | (5,5)  |  5.00 |  3.61 |      **C2**      |
+
+
+#### **Clusters After Iteration 1**
+
+* **Cluster 1 (C1):** P1(1,1), P2(2,1), P4(3,2)
+* **Cluster 2 (C2):** P3(2,3), P5(4,3), P6(5,5)
+
+#### Compute New Centroids
+
+$$
+\text{Centroid} = \left(\frac{\sum x}{n}, \frac{\sum y}{n}\right)
+$$
+
+
+* $$C1= \frac{1}{3} ((1,1)+ (2,1)+ (3,2))=  (2.0, 1.33) $$
+* $$C2=\frac{1}{3} ( (2,3)+ (4,3)+ (5,5))=   (3.67, 3.67)   $$
+
+#### Recalculate Distances (Iteration 2)
+
+| Point | (x, y) | d(C1:2.0,1.33) | d(C2:3.67, 3.67) | Assigned Cluster |
+| :---- | :----- | -------------: | ------------: | :--------------: |
+| P1    | (1,1)  |           1.05 |          3.78 |      **C1**      |
+| P2    | (2,1)  |           0.33 |          3.15 |      **C1**      |
+| P3    | (2,3)  |           1.67 |          1.8 |      **C1**      |
+| P4    | (3,2)  |           1.204 |          1.8|      **C1**      |
+| P5    | (4,3)  |           2.605 |          0.75 |      **C2**      |
+| P6    | (5,5)  |           4.74 |          1.88 |      **C2**      |
+
+#### **Clusters After Iteration 2**
+
+* **Cluster 1 (C1):** P1(1,1), P2(2,1),P3(2,3), P4(3,2)
+* **Cluster 2 (C2):** P5(4,3), P6(5,5)
+
+#### Compute New Centroids
+
+
+* $$C1= \frac{1}{4} ((1,1)+ (2,1)+(2,3)+ (3,2))=  (2.0, 1.75) $$
+* $$C2=\frac{1}{2} ((4,3)+ (5,5))=   (4.5, 4)   $$
+
+#### Recalculate Distances (Iteration 3)
+
+| Point | (x, y) | d(C1:2.0,1.75) | d(C2:4.5, 4) | Assigned Cluster |
+| :---- | :----- | -------------: | ------------: | :--------------: |
+| P1    | (1,1)  |           1.25 |          4.61 |      **C1**      |
+| P2    | (2,1)  |           0.75 |          3.9 |      **C1**      |
+| P3    | (2,3)  |           1.25 |          2.69 |      **C1**      |
+| P4    | (3,2)  |           1.03 |          2.5|      **C1**      |
+| P5    | (4,3)  |           2.36 |          1.12 |      **C2**      |
+| P6    | (5,5)  |           4.42 |          1.12 |      **C2**      |
+
+#### **Clusters After Iteration 3**
+
+* **Cluster 1 (C1):** P1(1,1), P2(2,1),P3(2,3), P4(3,2)
+* **Cluster 2 (C2):** P5(4,3), P6(5,5)
+✅ No change in cluster assignments → **Algorithm converged.**
+
+---
+

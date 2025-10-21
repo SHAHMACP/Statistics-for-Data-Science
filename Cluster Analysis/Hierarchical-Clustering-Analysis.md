@@ -63,8 +63,8 @@ Linkage defines how the distance between two clusters is computed.
 | **P1** | 0 |   |   |   |   |
 | **P2** | 9 | 0 |   |   |   |
 | **P3** | 3 | 7 | 0 |   |   |
-| **P4** | 5 | 6 | 8 | 0 |   |
-| **P5** | 10 | 12 | 2 | 9 | 0 |
+| **P4** | 6 | 5 | 9 | 0 |   |
+| **P5** | 11 | 10 | 2 | 8 | 0 |
 
 Perform clustering using **Complete Linkage Method**.
 

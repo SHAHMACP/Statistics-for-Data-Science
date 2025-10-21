@@ -37,7 +37,54 @@ A dendrogram is like a family tree for clusters. It shows how individual data po
 | **Divisive (Top-Down)** | Start with all data points in a single cluster and recursively divide it into smaller clusters. | **DIANA (Divisive Analysis)** |
 <img width="660" height="360" alt="image" src="https://github.com/user-attachments/assets/7f03c7ca-b580-4f5f-9ccd-9c096949b880" />
 
+
 ---
+
+## **Algorithm 1: Agglomerative Hierarchical Clustering (AGNES)**
+
+Agglomerative Hierarchical Clustering (also known as **AGNES**-Agglomerative Nesting ) is a **bottom-up** approach:
+Each data point starts as its own cluster, and clusters are **iteratively merged** based on similarity (or distance) until one single cluster remains.
+
+
+### **Algorithm Steps**
+
+1. **Start** with *n* clusters, each containing one data point (singleton). 
+2. **Compute** the pairwise **distance matrix** between all clusters.
+3. **Find** the two clusters with the **minimum distance** (most similar).
+4. **Merge** these two clusters into one new cluster.
+5. Compute the distance between the new cluster and each of the old clusters.
+6. **Update** the distance matrix to reflect the new distances between clusters, using a chosen **linkage method**:
+
+   * *Single linkage:* minimum distance
+   * *Complete linkage:* maximum distance
+   * *Average linkage:* mean distance
+7. **Repeat** steps 3–5 until all points are merged into a single cluster.
+8. The process can be visualized as a **dendrogram**, showing how clusters are merged step by step.
+
+---
+
+## **Algorithm 2: Divisive Hierarchical Clustering (DIANA)**
+
+Divisive Hierarchical Clustering (also known as **DIANA**-Divisive Analysis) is a **top-down** approach:
+Start with **one large cluster** containing all data points, and then **split** clusters recursively into smaller clusters until each data point stands alone.
+
+
+### **Algorithm Steps**
+
+1. **Start** with all data points in one cluster.
+2. **Compute** the dissimilarity (distance) between all objects in the cluster.
+3. **Find** the most dissimilar object — the point farthest from all others.
+4. **Use** this object as the **seed** of a new cluster.
+5. **Assign** each remaining point to one of the two clusters:
+
+   * If it is **closer to the seed**, move it to the new cluster.
+   * Otherwise, keep it in the existing cluster.
+6. **Recalculate** dissimilarities within each cluster.
+7. **Select** the cluster with the **largest average dissimilarity** and **repeat the split**.
+8. **Continue** until every data point forms its own cluster or until the desired number of clusters is reached.
+
+---
+
 
 ## Types of Linkage Methods
 

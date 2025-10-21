@@ -54,9 +54,11 @@ Linkage defines how the distance between two clusters is computed.
 ---
 
 
-## 🧮 7. Example Problem 
+## Example 
 
-### Distance Matrix
+### Problem 1 
+
+Distance Matrix
 
 |   | P1 | P2 | P3 | P4 | P5 |
 |:-:|---:|---:|---:|---:|---:|
@@ -66,16 +68,11 @@ Linkage defines how the distance between two clusters is computed.
 | **P4** | 6 | 5 | 9 | 0 |   |
 | **P5** | 11 | 10 | 2 | 8 | 0 |
 
-Perform clustering using **Complete Linkage Method**.
+Perform clustering using **Complete and single Linkage Method**.
 
 ### Step-by-Step:
 
-1. Identify the smallest distance → 2 (P3, P5).  
-   Merge (P3, P5) into one cluster.
 
-2. Recalculate the distance of this new cluster to others using **maximum** (since complete linkage).
-
-3. Continue merging clusters with smallest maximum distances until all points belong to one cluster.
 
 📺 **Reference Video:** [Complete Linkage HCA Example](https://www.youtube.com/watch?v=JeY9P-Vw9hg)
 

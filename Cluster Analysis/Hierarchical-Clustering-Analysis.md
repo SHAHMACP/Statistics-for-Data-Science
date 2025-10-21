@@ -117,7 +117,163 @@ Distance Matrix
 
 Perform clustering using **Complete and single Linkage Method**.
 
-### Step-by-Step:
+
+#####  **Start** with *5* clusters, each containing one data point (singleton). **Given Distance Matrix**
+
+|        | {P1} | {P2} | {P3} | {P4} | {P5} |
+| :----: | -: | -: | -: | -: | -: |
+| {**P1**} |  0 |  9 |  3 |  6 | 11 |
+| {**P2**} |  9 |  0 |  7 |  5 | 10 |
+| {**P3**} |  3 |  7 |  0 |  9 |  2 |
+| {**P4**} |  6 |  5 |  9 |  0 |  8 |
+| {**P5**} | 11 | 10 |  2 |  8 |  0 |
+
+
+##### Step 1 — Identify the smallest distance
+
+We look for the **minimum non-zero value** in the matrix.
+
+* Minimum = **2**, between **P3 and P5**.
+
+✅ **Merge C1 = {P3, P5}**
+
+
+##### Step 2 — Recompute the distance matrix
+
+Since we are using **Complete Linkage**, the new distance between a merged cluster and another cluster is the **maximum** of pairwise distances.
+
+$$
+D(C_{new}, X) = \max(D(P3,X), D(P5,X))
+$$
+
+| Pair  | D(P3,X) | D(P5,X) |    max | Result |
+| ----- | ------: | ------: | -----: | ------ |
+| C1–P1 |       3 |      11 | **11** |        |
+| C1–P2 |       7 |      10 | **10** |        |
+| C1–P4 |       9 |       8 |  **9** |        |
+
+So the new distance matrix becomes:
+
+|             | P1 | P2 | P4 | (P3,P5) |
+| :---------: | -: | -: | -: | ------: |
+|    **P1**   |  0 |  9 |  6 |      11 |
+|    **P2**   |  9 |  0 |  5 |      10 |
+|    **P4**   |  6 |  5 |  0 |       9 |
+| **(P3,P5)** | 11 | 10 |  9 |       0 |
+
+---
+
+## 🔹 Step 3 — Find the next minimum distance
+
+From the updated matrix,
+the smallest value = **5**, between **P2 and P4**.
+
+✅ **Merge C2 = {P2, P4}**
+
+---
+
+## 🔹 Step 4 — Recompute the distance matrix again
+
+Now clusters are:
+
+* **C1 = {P3,P5}**
+* **C2 = {P2,P4}**
+* **P1**
+
+We update distances using **maximum distance rule** (complete linkage).
+
+[
+D(C_2, P1) = \max(D(P2,P1), D(P4,P1)) = \max(9, 6) = 9
+]
+[
+D(C_1, P1) = 11 \quad(\text{from Step 2})
+]
+[
+D(C_1, C_2) = \max(D(P3,P2), D(P3,P4), D(P5,P2), D(P5,P4))
+= \max(7, 9, 10, 8) = 10
+]
+
+|             | P1 | (P2,P4) | (P3,P5) |
+| :---------: | -: | ------: | ------: |
+|    **P1**   |  0 |       9 |      11 |
+| **(P2,P4)** |  9 |       0 |      10 |
+| **(P3,P5)** | 11 |      10 |       0 |
+
+---
+
+## 🔹 Step 5 — Find the next smallest distance
+
+The smallest distance now is **9**, between **P1 and (P2,P4)**.
+
+✅ **Merge C3 = {P1, P2, P4}**
+
+---
+
+## 🔹 Step 6 — Recompute distance matrix
+
+Clusters now:
+
+* **C1 = {P3,P5}**
+* **C3 = {P1,P2,P4}**
+
+Compute distance between the two clusters using **maximum** pairwise distance.
+
+[
+D(C_1, C_3) = \max(
+D(P3,P1), D(P3,P2), D(P3,P4),
+D(P5,P1), D(P5,P2), D(P5,P4)
+)
+]
+[
+= \max(3, 7, 9, 11, 10, 8) = 11
+]
+
+✅ So the final merge distance = **11**.
+
+---
+
+## 🌲 Step 7 — Construct the Dendrogram
+
+| Merge Step | Clusters Merged      | Distance (Level) |
+| ---------- | -------------------- | ---------------- |
+| 1          | (P3, P5)             | 2                |
+| 2          | (P2, P4)             | 5                |
+| 3          | (P1, P2, P4)         | 9                |
+| 4          | (P1, P2, P3, P4, P5) | 11               |
+
+---
+
+### ✅ **Final Cluster Hierarchy**
+
+```
+Level 11:          {P1, P2, P3, P4, P5}
+                 /             \
+Level 9:   {P1, P2, P4}     {P3, P5}
+          /        \
+Level 5: {P2,P4}   P1
+```
+
+---
+
+## 🧾 **Summary of Steps**
+
+| Step | Action                | Merged Clusters      | Distance |
+| ---- | --------------------- | -------------------- | -------- |
+| 1    | Smallest distance = 2 | (P3,P5)              | 2        |
+| 2    | Next smallest = 5     | (P2,P4)              | 5        |
+| 3    | Next smallest = 9     | (P1,(P2,P4))         | 9        |
+| 4    | Final merge           | ((P1,P2,P4),(P3,P5)) | 11       |
+
+---
+
+## 🧮 **Final Results**
+
+* **Number of iterations:** 4
+* **Final cluster formed at distance = 11**
+* **Final 2 clusters before full merge:**
+
+  * **Cluster A:** {P1, P2, P4}
+  * **Cluster B:** {P3, P5}
 
 
 

@@ -219,7 +219,8 @@ So the final merge distance = **11**.
 | 3          | (P1, P2, P4)         | 9                |
 | 4          | (P1, P2, P3, P4, P5) | 11               |
 
----
+<img width="686" height="474" alt="image" src="https://github.com/user-attachments/assets/ba68ceca-ad9f-4a8d-8b8d-5ee13efddcea" />
+
 
 
 ##### **Final Results**
@@ -351,6 +352,7 @@ Merge the last two clusters at **distance = 6**
 * **Cluster 1:** {P1, P3, P5}
 * **Cluster 2:** {P2, P4}
 
+<img width="678" height="474" alt="image" src="https://github.com/user-attachments/assets/c2709569-fcfa-4f1d-b425-6b87030b38cd" />
 
 ---
 

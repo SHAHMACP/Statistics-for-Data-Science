@@ -115,7 +115,7 @@ Distance Matrix
 | **P4** | 6 | 5 | 9 | 0 |   |
 | **P5** | 11 | 10 | 2 | 8 | 0 |
 
-Perform clustering using **Complete and single Linkage Method**.
+Perform clustering using **Complete Linkage Method**.
 
 
 #####  **Start** with *5* clusters, each containing one data point (singleton). **Given Distance Matrix**
@@ -235,6 +235,121 @@ So the final merge distance = **11**.
 
 📺 **Reference Video:** [Complete Linkage HCA Example](https://www.youtube.com/watch?v=JeY9P-Vw9hg)
 
+---
+### Problem 2
+
+Create dendrogram using **Single Linkage Method** (Agglomerative Clustering)”
+
+and the given **distance matrix**:
+
+|        | P1 | P2 | P3 | P4 | P5 |
+| :----: | -: | -: | -: | -: | -: |
+| **P1** |  0 |  9 |  3 |  6 | 11 |
+| **P2** |  9 |  0 |  7 |  5 | 10 |
+| **P3** |  3 |  7 |  0 |  9 |  2 |
+| **P4** |  6 |  5 |  9 |  0 |  8 |
+| **P5** | 11 | 10 |  2 |  8 |  0 |
+
+
+
+In **Single Linkage**,
+the distance between two clusters is the **minimum distance** between any two points in the clusters.
+
+$$
+D(C_1, C_2) = \min_{i \in C_1, j \in C_2} d(i,j)
+$$
+
+##### Step 1 — Identify the smallest distance
+
+From the matrix, the **smallest non-zero distance = 2**, between **P3 and P5**.
+
+Merge: **C1 = {P3, P5}**
+
+
+##### Step 2 — Update the distance matrix
+
+Use the **minimum** distance rule to find distances from C1 to all other points.
+
+* $d(({P3, P5}),P1)=min({d(P3,P1),d(P5,P1)})=min(3,11)=3$
+* $d(({P3, P5}),P2)=min({d(P3,P2),d(P5,P2)})=min(7,10)=7$
+* $d(({P3, P5}),P4)=min({d(P3,P4),d(P5,P4)})=min(9,8)=8$
+
+New matrix:
+
+|             | P1 | P2 | P4 | (P3,P5) |
+| :---------: | -: | -: | -: | ------: |
+|    **P1**   |  0 |  9 |  6 |       3 |
+|    **P2**   |  9 |  0 |  5 |       7 |
+|    **P4**   |  6 |  5 |  0 |       8 |
+| **(P3,P5)** |  3 |  7 |  8 |       0 |
+
+
+##### Step 3 — Find next minimum distance
+
+Smallest = **3**, between **P1** and **(P3,P5)**.
+
+Merge: **C2 = {P1, P3, P5}**
+
+
+
+##### Step 4 — Update distance matrix
+
+Now clusters are:
+
+* **C2 = {P1, P3, P5}**
+* **P2**
+* **P4**
+
+Compute new distances using **minimum** linkage rule:
+
+* $d(({P1, P3, P5}), P2) = \min(d(P1,P2), d(P3,P2), d(P5,P2)) = \min(9,7,10) = 7$
+* $d(({P1, P3, P5}), P4) = \min(d(P1,P4), d(P3,P4), d(P5,P4)) = \min(6,9,8) = 6$
+* $d(P2,P4) = 5$
+
+
+|                | (P1,P3,P5) | P2 | P4 |
+| :------------: | ---------: | -: | -: |
+| **(P1,P3,P5)** |          0 |  7 |  6 |
+|     **P2**     |          7 |  0 |  5 |
+|     **P4**     |          6 |  5 |  0 |
+
+
+
+#####  Step 5 — Next smallest distance
+
+Minimum = **5**, between **P2 and P4**.
+
+Merge: **C3 = {P2, P4}**
+
+
+#####  Step 6 — Update matrix
+
+Clusters now:
+
+* **C2 = {P1, P3, P5}**
+* **C3 = {P2, P4}**
+
+Compute new distances using **minimum** linkage rule:
+* $d(({P1, P3, P5}), ({P2, P4})) = \min(d(P1,P2), d(P1,P4), d(P3,P2), d(P3,P4), d(P5,P2), d(P5,P4))= \min(9,6,7,9,10,8) = 6$
+
+Final matrix:
+
+|                | (P1,P3,P5) | (P2,P4) |
+| :------------: | ---------: | ------: |
+| **(P1,P3,P5)** |          0 |       6 |
+|   **(P2,P4)**  |          6 |       0 |
+
+
+#####  Step 7 — Final merge
+
+Merge the last two clusters at **distance = 6**
+
+
+
+**Final Two Clusters (Before Final Merge):**
+
+* **Cluster 1:** {P1, P3, P5}
+* **Cluster 2:** {P2, P4}
 
 
 ---
